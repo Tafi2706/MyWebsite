@@ -1,0 +1,27 @@
+<nav class="navbar">
+    <div class="container navbar-container">
+        <a href="/" class="navbar-logo">
+            <img src="/img/logo.jpg" alt="Logo" class="logo-image">
+            <span class="navbar-title">Taf1 IT BLOG</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="{{ if .IsHome }}active{{ end }}">Home</a></li>
+            <li><a href="/about/" class="{{ if eq .Section " about" }}active{{ end }}">About</a></li>
+            <li><a href="/portfolio/" class="{{ if eq .Section " portfolio" }}active{{ end }}">Portfolio</a></li>
+            <li><a href="/contact/" class="{{ if eq .Section " contact" }}active{{ end }}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('active');
+    });
+</script>

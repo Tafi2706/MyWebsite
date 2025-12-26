@@ -1,0 +1,65 @@
+{{ define "main" }}
+<div class="home-page">
+    <div class="container">
+        <div class="home-hero">
+            <h1 class="home-title">Blog Lập Trình Mạng</h1>
+            <p class="home-subtitle">
+                Khám phá các cơ chế và khía cạnh bảo mật trong lập trình mạng
+            </p>
+        </div>
+
+        <div class="home-content">
+            <aside class="home-sidebar">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm bài viết..." class="search-input">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+
+                <a href="/about/" class="about-widget-link">
+                    <div class="about-widget">
+                        <div class="about-widget-avatar">
+                            <img src="/img/avatar.jpg" alt="Avatar" class="avatar-image">
+                        </div>
+                        <h3 class="about-widget-name">Nguyễn Thành Tài</h3>
+                        <p class="about-widget-bio">
+                            Sinh viên năm cuối ngành công nghệ Phần mềm tại HUTECH. Đam mê phát triển Backend và kiến
+                            trúc
+                            hệ thống.
+                        </p>
+                        <div class="about-widget-cta">
+                            Tìm Hiểu Thêm →
+                        </div>
+                    </div>
+                </a>
+            </aside>
+
+            <section class="home-main">
+                <h2 class="section-title">Bài Viết Mới Nhất</h2>
+                <div class="blog-grid" id="blog-grid">
+                    {{ range where .Site.RegularPages "Section" "blog" }}
+                    <article class="blog-card" data-title="{{ .Title }}" data-excerpt="{{ .Params.excerpt }}">
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title">
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </h3>
+                            <p class="blog-card-excerpt">{{ .Params.excerpt }}</p>
+                            <div class="blog-card-meta">
+                                <time class="blog-card-date">{{ .Date.Format "2 tháng 1, 2006" }}</time>
+                                <a href="{{ .RelPermalink }}" class="blog-card-link">Đọc Thêm →</a>
+                            </div>
+                        </div>
+                    </article>
+                    {{ end }}
+                </div>
+                <div id="no-results" class="no-results" style="display: none;">
+                    <p>Không tìm thấy bài viết nào phù hợp.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{{ end }}

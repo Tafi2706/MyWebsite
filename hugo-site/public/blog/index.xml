@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Taf1 IT BLOG</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blogs on Taf1 IT BLOG</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chiến Lược Giảm Thiểu DDoS: Hướng Dẫn Toàn Diện</title>
+      <link>http://localhost:1313/blog/ddos-mitigation/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/ddos-mitigation/</guid>
+      <description>&lt;h1 id=&#34;chiến-lược-giảm-thiểu-ddos&#34;&gt;Chiến Lược Giảm Thiểu DDoS&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tấn công DDoS (Distributed Denial of Service)&lt;/strong&gt; là một trong những mối đe dọa phổ biến và nguy hiểm nhất đối với các dịch vụ trực tuyến hiện nay. Hiểu cách phát hiện và ứng phó kịp thời với các cuộc tấn công này là yếu tố then chốt để duy trì sự hoạt động liên tục (High Availability) của hệ thống.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tóm tắt:&lt;/strong&gt; Bài viết này sẽ đi sâu vào định nghĩa, phân loại các hình thức tấn công phổ biến và đưa ra chiến lược phòng thủ đa lớp (Defense in Depth).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hiểu về Bắt Tay TCP/IP (TCP/IP Handshake)</title>
+      <link>http://localhost:1313/blog/tcp-ip-handshake/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tcp-ip-handshake/</guid>
+      <description>&lt;h1 id=&#34;giới-thiệu&#34;&gt;Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;TCP/IP là một trong những giao thức quan trọng nhất của Internet hiện đại. Nó đảm bảo rằng dữ liệu được truyền một cách đáng tin cậy giữa các thiết bị trên mạng. Một trong những cơ chế cốt lõi của TCP là &lt;strong&gt;quy trình bắt tay ba bước (Three-Way Handshake)&lt;/strong&gt;, giúp thiết lập kết nối trước khi truyền dữ liệu.&lt;/p&gt;&#xA;&lt;h2 id=&#34;quy-trình-bắt-tay-ba-bước&#34;&gt;Quy trình Bắt Tay Ba Bước&lt;/h2&gt;&#xA;&lt;h3 id=&#34;bước-1-syn-synchronize&#34;&gt;Bước 1: SYN (Synchronize)&lt;/h3&gt;&#xA;&lt;p&gt;Client khởi tạo kết nối bằng cách gửi một gói &lt;strong&gt;SYN&lt;/strong&gt; đến server. Gói này chứa số thứ tự ban đầu (Initial Sequence Number – ISN) để đồng bộ hóa việc truyền dữ liệu.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thực Hành Tốt Nhất về Bảo Mật Lập Trình Socket</title>
+      <link>http://localhost:1313/blog/socket-security-practices/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/socket-security-practices/</guid>
+      <description>&lt;h1 id=&#34;bảo-mật-trong-socket-programming&#34;&gt;Bảo Mật Trong Socket Programming&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Lập trình socket&lt;/strong&gt; là kỹ năng nền tảng và quan trọng trong phát triển ứng dụng mạng. Tuy nhiên, quyền năng càng lớn thì rủi ro càng cao; nếu không được xử lý đúng cách, socket có thể trở thành cửa ngõ cho hàng loạt lỗ hổng bảo mật nghiêm trọng.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Mục tiêu:&lt;/strong&gt; Hiểu và áp dụng các thực hành tốt nhất để bảo vệ hệ thống và người dùng khỏi các cuộc tấn công mạng phổ biến.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tìm Hiểu Sâu về Giao Thức TLS/SSL</title>
+      <link>http://localhost:1313/blog/tls-ssl-deep-dive/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tls-ssl-deep-dive/</guid>
+      <description>&lt;h1 id=&#34;tlsssl--nền-tảng-bảo-mật-web&#34;&gt;TLS/SSL – Nền tảng bảo mật Web&lt;/h1&gt;&#xA;&lt;p&gt;Transport Layer Security (TLS) và tiền thân của nó SSL (Secure Sockets Layer) là các giao thức mã hóa giúp bảo mật truyền thông qua Internet. Hiểu rõ cách TLS/SSL hoạt động là điều cần thiết cho bất kỳ developer nào làm việc với ứng dụng web hay API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tls-hoạt-động-như-thế-nào&#34;&gt;TLS hoạt động như thế nào?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;handshake-protocol&#34;&gt;Handshake Protocol&lt;/h3&gt;&#xA;&lt;p&gt;TLS sử dụng quy trình bắt tay phức tạp để thiết lập kết nối an toàn:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Lập Trình Mạng">
+    <meta name="author" content="Nguyễn Thành Tài">
+    <title>Dự Án Của Tôi | Taf1 IT BLOG</title>
+   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container navbar-container">
+        <a href="/" class="navbar-logo">
+            <img src="/img/logo.jpg" alt="Logo" class="logo-image">
+            <span class="navbar-title">Taf1 IT BLOG</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about/" class="">About</a></li>
+            <li><a href="/portfolio/" class="">Portfolio</a></li>
+            <li><a href="/contact/" class="">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('active');
+    });
+</script>
+    
+    <main>
+        
+<div class="content-page">
+    <div class="container">
+        
+<div class="portfolio-page">
+    <div class="container">
+        <div class="portfolio-header">
+            <div class="portfolio-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+            </div>
+            <h1 class="page-title">Dự Án Của Tôi</h1>
+            <p class="page-subtitle">
+                Tổng hợp các dự án cá nhân và đóng góp của tôi
+            </p>
+        </div>
+
+        <div class="projects-card">
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title-section">
+                        <h2 class="project-name">MusicResu</h2>
+                        <p class="project-subtitle">Nền tảng Nghe nhạc Trực tuyến & Gợi ý AI</p>
+                    </div>
+                    <a href="https://github.com/aresu-1704/musicresu-musicwebsite" target="_blank"
+                        rel="noopener noreferrer" class="project-link-button">
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <span>Xem Mã</span>
+                        <svg width="14" height="14" v viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+
+                <p class="project-description">Hệ thống website nghe nhạc trực tuyến Full-stack hiện đại, tập trung vào
+                    trải nghiệm cá nhân hóa người dùng. Nổi bật với tính năng gợi ý bài hát thông minh dựa trên lịch sử
+                    nghe và tích hợp cổng thanh toán trực tuyến.</p>
+
+                <div class="project-section">
+                    <h3 class="section-title">Công nghệ:</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">React.js</span>
+                        <span class="tech-badge">ASP.NET Core Web API (.NET 8)</span>
+                        <span class="tech-badge">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h3 class="section-title">Tính năng chính:</h3>
+                    <ul class="features-list">
+                        <li>Nghe nhạc streaming chất lượng cao, tìm kiếm và lọc bài hát đa tiêu chí.</li>
+                        <li>Hệ thống gợi ý bài hát theo sở thích (Personalized Recommendation).</li>
+                        <li>Thanh toán nâng cấp tài khoản VIP qua cổng VNPAY.</li>
+                        <li>Phân quyền quản trị (Admin) xem thống kê doanh thu và kiểm duyệt nội dung.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-divider"></div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title-section">
+                        <h2 class="project-name">Relo Social Network</h2>
+                        <p class="project-subtitle">Mạng xã hội & Nhắn tin Real-time</p>
+                    </div>
+                    <a href="https://github.com/aresu-1704/relo-social-network" target="_blank"
+                        rel="noopener noreferrer" class="project-link-button">
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <span>Xem Mã</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+
+                <p class="project-description">Ứng dụng mạng xã hội di động đa nền tảng, cho phép kết nối và tương tác
+                    thời gian thực. Dự án tập trung vào khả năng xử lý tin nhắn tức thời (Real-time messaging) và trải
+                    nghiệm người dùng mượt mà trên thiết bị di động.</p>
+
+                <div class="project-section">
+                    <h3 class="section-title">Công nghệ:</h3>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Flutter (Mobile App)</span>
+                        <span class="tech-badge">Python FastAPI (Backend)</span>
+                        <span class="tech-badge">Firebase Cloud Messaging</span>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h3 class="section-title">Tính năng chính:</h3>
+                    <ul class="features-list">
+                        <li>Chat Real-time (cá nhân & nhóm), hỗ trợ thu hồi tin nhắn và gửi đa phương tiện (ảnh, video,
+                            file).</li>
+                        <li>Hệ thống xác thực bảo mật với OTP và JWT.</li>
+                        <li>Newsfeed: Đăng bài, bình luận, thả cảm xúc (React) và nhận thông báo đẩy (Push
+                            Notifications) tức thì.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-content">
+            <p class="footer-copyright">
+                © 2025 Taf1 IT BLOG. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/Tafi2706" target="_blank" rel="noopener noreferrer"
+                    class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100012849085147" target="_blank"
+                    rel="noopener noreferrer" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="mailto:nguyenthanhtai270604@gmail.com" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script src="/js/search.js"></script>
+</body>
+</html>
