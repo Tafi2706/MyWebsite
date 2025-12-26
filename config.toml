@@ -1,7 +1,6 @@
 baseURL = 'http://localhost:1313/'
 languageCode = 'vi'
 title = 'Taf1 IT BLOG'
-theme = ''
 
 [params]
   author = 'Nguyễn Thành Tài'
