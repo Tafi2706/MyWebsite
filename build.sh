@@ -23,7 +23,6 @@ main() {
   sass --version
 
   echo "Building Hugo site..."
-  cd hugo-site
   hugo --gc --minify
 }
 
