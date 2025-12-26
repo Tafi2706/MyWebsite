@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Programming on Taf1 IT BLOG</title>
-    <link>http://localhost:1313/tags/programming/</link>
-    <description>Recent content in Programming on Taf1 IT BLOG</description>
-    <generator>Hugo</generator>
-    <language>vi</language>
-    <lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Thực Hành Tốt Nhất về Bảo Mật Lập Trình Socket</title>
-      <link>http://localhost:1313/blog/socket-security-practices/</link>
-      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/socket-security-practices/</guid>
-      <description>&lt;h1 id=&#34;bảo-mật-trong-socket-programming&#34;&gt;Bảo Mật Trong Socket Programming&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Lập trình socket&lt;/strong&gt; là kỹ năng nền tảng và quan trọng trong phát triển ứng dụng mạng. Tuy nhiên, quyền năng càng lớn thì rủi ro càng cao; nếu không được xử lý đúng cách, socket có thể trở thành cửa ngõ cho hàng loạt lỗ hổng bảo mật nghiêm trọng.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Mục tiêu:&lt;/strong&gt; Hiểu và áp dụng các thực hành tốt nhất để bảo vệ hệ thống và người dùng khỏi các cuộc tấn công mạng phổ biến.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on Taf1 IT BLOG</title><link>http://localhost:1313/tags/programming/</link><description>Recent content in Programming on Taf1 IT BLOG</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Thực Hành Tốt Nhất về Bảo Mật Lập Trình Socket</title><link>http://localhost:1313/blog/socket-security-practices/</link><pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/socket-security-practices/</guid><description>&lt;h1 id="bảo-mật-trong-socket-programming"&gt;Bảo Mật Trong Socket Programming&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Lập trình socket&lt;/strong&gt; là kỹ năng nền tảng và quan trọng trong phát triển ứng dụng mạng. Tuy nhiên, quyền năng càng lớn thì rủi ro càng cao; nếu không được xử lý đúng cách, socket có thể trở thành cửa ngõ cho hàng loạt lỗ hổng bảo mật nghiêm trọng.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Mục tiêu:&lt;/strong&gt; Hiểu và áp dụng các thực hành tốt nhất để bảo vệ hệ thống và người dùng khỏi các cuộc tấn công mạng phổ biến.&lt;/p&gt;</description></item></channel></rss>
