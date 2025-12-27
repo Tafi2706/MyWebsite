@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blog Lập Trình Mạng">
     <meta name="author" content="Nguyễn Thành Tài">
-    <title>Giới Thiệu | Taf1 IT BLOG</title>
+    <title>JS Essentials 1: Biến, Kiểu Dữ Liệu và Strict Mode | Taf1 IT BLOG</title>
    
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -42,58 +42,46 @@
         
 <div class="content-page">
     <div class="container">
-        
-<div class="about-page">
-    <div class="container">
-        <div class="about-card-unified">
-            <div class="about-avatar-section">
-                <div class="about-avatar-wrapper">
-                    <img src="/img/avatar.jpg" alt="Nguyễn Thành Tài" class="about-avatar-image">
-                </div>
-            </div>
+        <h1 id="nhập-môn-javascript">Nhập Môn JavaScript</h1>
+<p>Khóa học <strong>JavaScript Essentials 1</strong> tập trung vào cú pháp cốt lõi. Dưới đây là những điểm nhấn quan trọng.</p>
+<h2 id="1-khai-báo-biến-var-let-const">1. Khai Báo Biến: Var, Let, Const</h2>
+<ul>
+<li><strong><code>var</code></strong>: Scope hàm (function scope), dễ gây lỗi hoisting. Hạn chế dùng.</li>
+<li><strong><code>let</code></strong>: Scope khối (block scope <code>{}</code>), dùng cho biến có thể thay đổi.</li>
+<li><strong><code>const</code></strong>: Scope khối, dùng cho hằng số (không thể gán lại).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Ví dụ
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;      <span style="color:#75715e">// function scope
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;      <span style="color:#75715e">// block scope
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PI</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span>; <span style="color:#75715e">// constant
+</span></span></span></code></pre></div><h2 id="2-kiểu-dữ-liệu-primitives">2. Kiểu Dữ Liệu (Primitives)</h2>
+<p>JS là ngôn ngữ <em>dynamic typing</em> (kiểu động).</p>
+<ul>
+<li><strong>String:</strong> Chuỗi ký tự (<code>&quot;Hello&quot;</code>)</li>
+<li><strong>Number:</strong> Số (<code>42</code>, <code>3.14</code>)</li>
+<li><strong>Boolean:</strong> <code>true</code> hoặc <code>false</code></li>
+<li><strong>BigInt:</strong> Số cực lớn</li>
+<li><strong>Null &amp; Undefined:</strong> Khác nhau như thế nào?
+<ul>
+<li><code>null</code>: Giá trị rỗng có chủ đích</li>
+<li><code>undefined</code>: Biến chưa được gán giá trị</li>
+</ul>
+</li>
+<li><strong>Symbol:</strong> Giá trị duy nhất</li>
+</ul>
+<h2 id="3-strict-mode">3. Strict Mode</h2>
+<p>Luôn bắt đầu file JS bằng <code>&quot;use strict&quot;;</code>. Chế độ này giúp:</p>
+<ul>
+<li>Bắt các lỗi ẩn</li>
+<li>Ngăn chặn sử dụng biến chưa khai báo</li>
+<li>Làm code an toàn hơn</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#e6db74">&#34;use strict&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">// Lỗi! Phải khai báo bằng let/const/var
+</span></span></span></code></pre></div><h2 id="kết-luận">Kết Luận</h2>
+<p>Nắm vững cơ bản về biến và kiểu dữ liệu là bước đầu tiên để trở thành JavaScript developer. Luôn sử dụng <code>const</code> khi có thể, chỉ dùng <code>let</code> khi cần thay đổi giá trị.</p>
 
-            <h1 class="about-greeting">Nguyễn Thành Tài</h1>
-            <p class="about-role">Sinh viên công nghệ phần mềm tại HUTECH</p>
-
-            <h2 class="about-content-heading">Giới Thiệu Bản Thân</h2>
-            <p class="about-bio-content">
-                Mình là sinh viên năm cuối chuyên ngành công nghệ phần mềm tại trường Đại học HUTECH
-                (Đại học Công nghệ TP.HCM). Với nền tảng vững chắc về khoa học máy tính
-                và đam mê xây dựng hệ thống, mình mong muốn áp dụng kiến thức của bản thân để giải quyết các vấn đề thực tế.
-            </p>
-
-            <h2 class="about-content-heading">Lộ Trình Nghề Nghiệp</h2>
-            <p class="about-bio-content">
-                Mục tiêu của mình là trở thành một Kỹ sư Phần mềm chuyên nghiệp. Thế mạnh và đam mê chính của mình nằm ở
-                 Phát triển Backend kiến trúc logic mạnh mẽ, cơ sở dữ liệu và API có khả năng mở rộng.
-                Tuy nhiên, mình tin vào việc trở thành một lập trình viên toàn diện, vì vậy mình đang tích cực cải thiện
-                kỹ năng Frontend
-                để thu hẹp khoảng cách giữa logic phía server và trải nghiệm người dùng, hướng tới khả năng
-                Full-stack toàn diện.
-            </p>
-
-            <h2 class="about-content-heading">Sở Thích & Hoạt Động Ngoài Lề</h2>
-            <p class="about-bio-content">
-                Khi không lập trình hay debug, bạn có thể tìm thấy mình đang đắm chìm trong thế giới game.
-                Với mình, chơi game không chỉ là giải trí; đó là cách để rèn luyện phản xạ và tư duy chiến thuật.
-                Mình thích thử thách của các game cạnh tranh và cốt truyện của các RPG. Điều này giúp bản thân nạp lại năng
-                lượng
-                và thường mang lại những ý tưởng mới cho các dự án của mình.
-            </p>
-            <p class="about-bio-content">
-                Nếu bạn muốn trao đổi về kiến thức công nghệ, hoặc đơn giản là có cùng sở thích chơi game, đừng ngại
-                liên hệ với mình qua:
-            </p>
-            <p class="about-bio-content">
-                <strong>Email:</strong> <a
-                    href="mailto:nguyenthanhtai270604@gmail.com">nguyenthanhtai270604@gmail.com</a><br>
-                <strong>Discord:</strong> 2706konopowa<br>
-                <strong>Steam:</strong> <a href="https://steamcommunity.com/profiles/76561198819901024/" target="_blank"
-                    rel="noopener noreferrer">Hồ sơ Steam của tôi</a>
-            </p>
-        </div>
-    </div>
-</div>
     </div>
 </div>
 

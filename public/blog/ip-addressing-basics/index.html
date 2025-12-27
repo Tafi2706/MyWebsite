@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blog Lập Trình Mạng">
     <meta name="author" content="Nguyễn Thành Tài">
-    <title>Giới Thiệu | Taf1 IT BLOG</title>
+    <title>Địa Chỉ IP và Subnetting: Định Danh Trên Mạng | Taf1 IT BLOG</title>
    
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -42,58 +42,35 @@
         
 <div class="content-page">
     <div class="container">
-        
-<div class="about-page">
-    <div class="container">
-        <div class="about-card-unified">
-            <div class="about-avatar-section">
-                <div class="about-avatar-wrapper">
-                    <img src="/img/avatar.jpg" alt="Nguyễn Thành Tài" class="about-avatar-image">
-                </div>
-            </div>
+        <h1 id="ip-addressing-ai-là-ai-trên-internet">IP Addressing: Ai Là Ai Trên Internet?</h1>
+<p>Mọi thiết bị kết nối mạng đều cần một địa chỉ IP (Internet Protocol). Khóa học Cisco giải thích chi tiết hai phiên bản IP chính.</p>
+<h2 id="ipv4-vs-ipv6">IPv4 vs IPv6</h2>
+<ul>
+<li><strong>IPv4:</strong> 32-bit (VD: <code>192.168.1.1</code>). Đang dần cạn kiệt.</li>
+<li><strong>IPv6:</strong> 128-bit (VD: <code>2001:0db8::</code>). Sinh ra để giải quyết vấn đề thiếu hụt địa chỉ của IPv4.</li>
+</ul>
+<h2 id="cấu-trúc-ipv4">Cấu trúc IPv4</h2>
+<p>Một địa chỉ IPv4 gồm 2 phần, được phân tách bởi <strong>Subnet Mask</strong>:</p>
+<ol>
+<li><strong>Network Portion:</strong> Định danh mạng (giống tên đường).</li>
+<li><strong>Host Portion:</strong> Định danh thiết bị (giống số nhà).</li>
+</ol>
+<p>Ví dụ: IP <code>192.168.1.10</code> với Subnet Mask <code>255.255.255.0</code> (/24) có nghĩa là: Mạng <code>192.168.1.0</code>, thiết bị số <code>10</code>.</p>
+<h2 id="public-vs-private-ip">Public vs Private IP</h2>
+<ul>
+<li><strong>Public IP:</strong> Địa chỉ duy nhất trên toàn Internet, do ISP cấp phát.</li>
+<li><strong>Private IP:</strong> Dùng trong mạng nội bộ (192.168.x.x, 10.x.x.x, 172.16-31.x.x), không định tuyến trên Internet.</li>
+</ul>
+<h2 id="subnetting">Subnetting</h2>
+<p>Subnetting là kỹ thuật chia một mạng lớn thành nhiều mạng con nhỏ hơn để:</p>
+<ul>
+<li>Tăng bảo mật</li>
+<li>Quản lý hiệu quả hơn</li>
+<li>Tiết kiệm IP</li>
+</ul>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Địa chỉ IP là &ldquo;căn cước công dân&rdquo; của mọi thiết bị trên mạng. Hiểu rõ cách phân chia và quản lý IP là kỹ năng thiết yếu cho Network Engineer.</p>
 
-            <h1 class="about-greeting">Nguyễn Thành Tài</h1>
-            <p class="about-role">Sinh viên công nghệ phần mềm tại HUTECH</p>
-
-            <h2 class="about-content-heading">Giới Thiệu Bản Thân</h2>
-            <p class="about-bio-content">
-                Mình là sinh viên năm cuối chuyên ngành công nghệ phần mềm tại trường Đại học HUTECH
-                (Đại học Công nghệ TP.HCM). Với nền tảng vững chắc về khoa học máy tính
-                và đam mê xây dựng hệ thống, mình mong muốn áp dụng kiến thức của bản thân để giải quyết các vấn đề thực tế.
-            </p>
-
-            <h2 class="about-content-heading">Lộ Trình Nghề Nghiệp</h2>
-            <p class="about-bio-content">
-                Mục tiêu của mình là trở thành một Kỹ sư Phần mềm chuyên nghiệp. Thế mạnh và đam mê chính của mình nằm ở
-                 Phát triển Backend kiến trúc logic mạnh mẽ, cơ sở dữ liệu và API có khả năng mở rộng.
-                Tuy nhiên, mình tin vào việc trở thành một lập trình viên toàn diện, vì vậy mình đang tích cực cải thiện
-                kỹ năng Frontend
-                để thu hẹp khoảng cách giữa logic phía server và trải nghiệm người dùng, hướng tới khả năng
-                Full-stack toàn diện.
-            </p>
-
-            <h2 class="about-content-heading">Sở Thích & Hoạt Động Ngoài Lề</h2>
-            <p class="about-bio-content">
-                Khi không lập trình hay debug, bạn có thể tìm thấy mình đang đắm chìm trong thế giới game.
-                Với mình, chơi game không chỉ là giải trí; đó là cách để rèn luyện phản xạ và tư duy chiến thuật.
-                Mình thích thử thách của các game cạnh tranh và cốt truyện của các RPG. Điều này giúp bản thân nạp lại năng
-                lượng
-                và thường mang lại những ý tưởng mới cho các dự án của mình.
-            </p>
-            <p class="about-bio-content">
-                Nếu bạn muốn trao đổi về kiến thức công nghệ, hoặc đơn giản là có cùng sở thích chơi game, đừng ngại
-                liên hệ với mình qua:
-            </p>
-            <p class="about-bio-content">
-                <strong>Email:</strong> <a
-                    href="mailto:nguyenthanhtai270604@gmail.com">nguyenthanhtai270604@gmail.com</a><br>
-                <strong>Discord:</strong> 2706konopowa<br>
-                <strong>Steam:</strong> <a href="https://steamcommunity.com/profiles/76561198819901024/" target="_blank"
-                    rel="noopener noreferrer">Hồ sơ Steam của tôi</a>
-            </p>
-        </div>
-    </div>
-</div>
     </div>
 </div>
 

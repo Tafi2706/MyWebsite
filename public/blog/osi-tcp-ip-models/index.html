@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blog Lập Trình Mạng">
     <meta name="author" content="Nguyễn Thành Tài">
-    <title>Giới Thiệu | Taf1 IT BLOG</title>
+    <title>Mô Hình OSI và TCP/IP: Ngôn Ngữ Của Internet | Taf1 IT BLOG</title>
    
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -42,58 +42,31 @@
         
 <div class="content-page">
     <div class="container">
-        
-<div class="about-page">
-    <div class="container">
-        <div class="about-card-unified">
-            <div class="about-avatar-section">
-                <div class="about-avatar-wrapper">
-                    <img src="/img/avatar.jpg" alt="Nguyễn Thành Tài" class="about-avatar-image">
-                </div>
-            </div>
+        <h1 id="mô-hình-osi--tcpip">Mô Hình OSI &amp; TCP/IP</h1>
+<p>Trong khóa học <strong>Networking Basics</strong>, khái niệm quan trọng nhất chính là các mô hình tham chiếu. Để hai máy tính có thể &ldquo;nói chuyện&rdquo; với nhau, chúng cần tuân theo các quy tắc chung.</p>
+<h2 id="1-mô-hình-osi-7-tầng">1. Mô Hình OSI (7 Tầng)</h2>
+<ol>
+<li><strong>Physical (Vật lý):</strong> Dây cáp, sóng wifi, bit (0/1).</li>
+<li><strong>Data Link (Liên kết dữ liệu):</strong> MAC Address, Switch.</li>
+<li><strong>Network (Mạng):</strong> IP Address, Router (Định tuyến).</li>
+<li><strong>Transport (Giao vận):</strong> TCP/UDP, đảm bảo dữ liệu đến đúng nơi.</li>
+<li><strong>Session (Phiên):</strong> Quản lý phiên làm việc.</li>
+<li><strong>Presentation (Trình bày):</strong> Mã hóa, nén dữ liệu (SSL/TLS).</li>
+<li><strong>Application (Ứng dụng):</strong> Giao diện người dùng (HTTP, FTP, DNS).</li>
+</ol>
+<h2 id="2-quá-trình-đóng-gói-encapsulation">2. Quá Trình Đóng Gói (Encapsulation)</h2>
+<p>Khi bạn gửi một tin nhắn, dữ liệu sẽ đi từ tầng 7 xuống tầng 1, mỗi tầng bọc thêm một &ldquo;header&rdquo; thông tin. Khi sang máy nhận, quá trình diễn ra ngược lại (De-encapsulation).</p>
+<h2 id="3-mô-hình-tcpip-4-tầng">3. Mô Hình TCP/IP (4 Tầng)</h2>
+<p>TCP/IP là mô hình thực tế được sử dụng trên Internet:</p>
+<ol>
+<li><strong>Network Access</strong> (tương đương Physical + Data Link)</li>
+<li><strong>Internet</strong> (IP Layer)</li>
+<li><strong>Transport</strong> (TCP/UDP)</li>
+<li><strong>Application</strong> (HTTP, DNS, FTP&hellip;)</li>
+</ol>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Hiểu mô hình OSI và TCP/IP là nền tảng để nắm vững cách Internet hoạt động. Mỗi tầng đảm nhiệm một nhiệm vụ cụ thể, giúp việc truyền thông trở nên có tổ chức và hiệu quả.</p>
 
-            <h1 class="about-greeting">Nguyễn Thành Tài</h1>
-            <p class="about-role">Sinh viên công nghệ phần mềm tại HUTECH</p>
-
-            <h2 class="about-content-heading">Giới Thiệu Bản Thân</h2>
-            <p class="about-bio-content">
-                Mình là sinh viên năm cuối chuyên ngành công nghệ phần mềm tại trường Đại học HUTECH
-                (Đại học Công nghệ TP.HCM). Với nền tảng vững chắc về khoa học máy tính
-                và đam mê xây dựng hệ thống, mình mong muốn áp dụng kiến thức của bản thân để giải quyết các vấn đề thực tế.
-            </p>
-
-            <h2 class="about-content-heading">Lộ Trình Nghề Nghiệp</h2>
-            <p class="about-bio-content">
-                Mục tiêu của mình là trở thành một Kỹ sư Phần mềm chuyên nghiệp. Thế mạnh và đam mê chính của mình nằm ở
-                 Phát triển Backend kiến trúc logic mạnh mẽ, cơ sở dữ liệu và API có khả năng mở rộng.
-                Tuy nhiên, mình tin vào việc trở thành một lập trình viên toàn diện, vì vậy mình đang tích cực cải thiện
-                kỹ năng Frontend
-                để thu hẹp khoảng cách giữa logic phía server và trải nghiệm người dùng, hướng tới khả năng
-                Full-stack toàn diện.
-            </p>
-
-            <h2 class="about-content-heading">Sở Thích & Hoạt Động Ngoài Lề</h2>
-            <p class="about-bio-content">
-                Khi không lập trình hay debug, bạn có thể tìm thấy mình đang đắm chìm trong thế giới game.
-                Với mình, chơi game không chỉ là giải trí; đó là cách để rèn luyện phản xạ và tư duy chiến thuật.
-                Mình thích thử thách của các game cạnh tranh và cốt truyện của các RPG. Điều này giúp bản thân nạp lại năng
-                lượng
-                và thường mang lại những ý tưởng mới cho các dự án của mình.
-            </p>
-            <p class="about-bio-content">
-                Nếu bạn muốn trao đổi về kiến thức công nghệ, hoặc đơn giản là có cùng sở thích chơi game, đừng ngại
-                liên hệ với mình qua:
-            </p>
-            <p class="about-bio-content">
-                <strong>Email:</strong> <a
-                    href="mailto:nguyenthanhtai270604@gmail.com">nguyenthanhtai270604@gmail.com</a><br>
-                <strong>Discord:</strong> 2706konopowa<br>
-                <strong>Steam:</strong> <a href="https://steamcommunity.com/profiles/76561198819901024/" target="_blank"
-                    rel="noopener noreferrer">Hồ sơ Steam của tôi</a>
-            </p>
-        </div>
-    </div>
-</div>
     </div>
 </div>
 

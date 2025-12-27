@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Lập Trình Mạng">
+    <meta name="author" content="Nguyễn Thành Tài">
+    <title>Kết Hợp Networking &amp; JS: Cách Web Hoạt Động | Taf1 IT BLOG</title>
+   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container navbar-container">
+        <a href="/" class="navbar-logo">
+            <img src="/img/logo.jpg" alt="Logo" class="logo-image">
+            <span class="navbar-title">Taf1 IT BLOG</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about/" class="">About</a></li>
+            <li><a href="/portfolio/" class="">Portfolio</a></li>
+            <li><a href="/contact/" class="">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('active');
+    });
+</script>
+    
+    <main>
+        
+<div class="content-page">
+    <div class="container">
+        <h1 id="khi-networking-gặp-gỡ-javascript">Khi Networking Gặp Gỡ JavaScript</h1>
+<p>Sau khi hoàn thành 3 khóa học Cisco, đây là bức tranh toàn cảnh về cách một ứng dụng web vận hành.</p>
+<h2 id="kịch-bản-người-dùng-bấm-nút-đăng-nhập">Kịch Bản: Người Dùng Bấm Nút &ldquo;Đăng Nhập&rdquo;</h2>
+<h3 id="1-javascript-frontend">1. JavaScript (Frontend)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">loginButton</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;login-btn&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">loginButton</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">async</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;username&#39;</span>).<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;password&#39;</span>).<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;/api/login&#39;</span>, {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> },
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">username</span>, <span style="color:#a6e22e">password</span> })
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Đăng nhập thành công!&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Lỗi:&#34;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p><strong>Những gì xảy ra:</strong></p>
+<ul>
+<li>Event Listener bắt sự kiện click</li>
+<li>Lấy dữ liệu từ form</li>
+<li>Gọi <code>fetch()</code> - Bất đồng bộ (Async)</li>
+</ul>
+<h3 id="2-networking-layers-vào-cuộc">2. Networking Layers Vào Cuộc</h3>
+<h4 id="a-dns-resolution">A. DNS Resolution</h4>
+<ul>
+<li><strong>Vấn đề:</strong> Trình duyệt cần biết IP của <code>api.example.com</code></li>
+<li><strong>Giải pháp:</strong> Gửi DNS Query (sử dụng UDP port 53)</li>
+<li><strong>Kết quả:</strong> Nhận IP address (VD: <code>192.168.1.100</code>)</li>
+</ul>
+<h4 id="b-tcp-three-way-handshake">B. TCP Three-Way Handshake</h4>
+<p>Trước khi gửi dữ liệu, phải thiết lập kết nối TCP:</p>
+<ol>
+<li><strong>SYN:</strong> Client → Server (&ldquo;Tôi muốn kết nối&rdquo;)</li>
+<li><strong>SYN-ACK:</strong> Server → Client (&ldquo;OK, tôi sẵn sàng&rdquo;)</li>
+<li><strong>ACK:</strong> Client → Server (&ldquo;Xác nhận!&rdquo;)</li>
+</ol>
+<h4 id="c-http-request">C. HTTP Request</h4>
+<p>Sau khi TCP kết nối, gửi HTTP Request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> /api/login <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#f92672">:</span> <span style="color:#ae81ff">api.example.com</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">application/json</span>
+</span></span><span style="display:flex;"><span>Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">45</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;username&#34;</span>:<span style="color:#e6db74">&#34;tai&#34;</span>,<span style="color:#f92672">&#34;password&#34;</span>:<span style="color:#e6db74">&#34;secret&#34;</span>}
+</span></span></code></pre></div><h4 id="d-tlsssl-nếu-https">D. TLS/SSL (Nếu HTTPS)</h4>
+<ul>
+<li><strong>Presentation Layer:</strong> Mã hóa dữ liệu</li>
+<li><strong>Handshake:</strong> Trao đổi certificate</li>
+<li><strong>Encryption:</strong> Dữ liệu được bảo vệ khỏi Man-in-the-Middle</li>
+</ul>
+<h4 id="e-data-encapsulation-osi-model">E. Data Encapsulation (OSI Model)</h4>
+<pre tabindex="0"><code>[Application] HTTP Request
+[Presentation] + SSL/TLS Encryption
+[Transport] + TCP Header (Port, Sequence Number)
+[Network] + IP Header (Source/Dest IP)
+[Data Link] + Ethernet Frame
+[Physical] → Bits qua dây cáp/wifi
+</code></pre><h3 id="3-server-xử-lý-và-phản-hồi">3. Server Xử Lý và Phản Hồi</h3>
+<p>Server nhận request, xử lý logic (kiểm tra username/password), rồi gửi response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">application/json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;status&#34;</span>:<span style="color:#e6db74">&#34;success&#34;</span>,<span style="color:#f92672">&#34;token&#34;</span>:<span style="color:#e6db74">&#34;abc123&#34;</span>}
+</span></span></code></pre></div><h3 id="4-javascript-nhận-response">4. JavaScript Nhận Response</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Promise fulfilled
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;success&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;token&#39;</span>, <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">token</span>);
+</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/dashboard&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="toàn-bộ-quy-trình-end-to-end">Toàn Bộ Quy Trình (End-to-End)</h2>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+    Browser-&gt;&gt;DNS: Resolve api.example.com
+    DNS--&gt;&gt;Browser: 192.168.1.100
+    Browser-&gt;&gt;Server: TCP SYN
+    Server--&gt;&gt;Browser: SYN-ACK
+    Browser-&gt;&gt;Server: ACK (Connected)
+    Browser-&gt;&gt;Server: HTTPS Request (Encrypted)
+    Server-&gt;&gt;Server: Process Login
+    Server--&gt;&gt;Browser: HTTPS Response (200 OK)
+    Browser-&gt;&gt;Browser: JS updates DOM
+</code></pre><h2 id="những-điều-học-được">Những Điều Học Được</h2>
+<h3 id="từ-networking-basics">Từ Networking Basics:</h3>
+<ul>
+<li><strong>OSI/TCP-IP Models:</strong> Hiểu cách dữ liệu di chuyển qua các tầng</li>
+<li><strong>IP Addressing:</strong> Routing từ client đến server</li>
+<li><strong>TCP vs UDP:</strong> Web dùng TCP vì cần tin cậy</li>
+<li><strong>DNS:</strong> Chuyển domain thành IP</li>
+</ul>
+<h3 id="từ-javascript-essentials">Từ JavaScript Essentials:</h3>
+<ul>
+<li><strong>Event Handling:</strong> Bắt user interaction</li>
+<li><strong>Async/Await:</strong> Xử lý API call không block UI</li>
+<li><strong>Fetch API:</strong> Giao tiếp với backend</li>
+<li><strong>JSON:</strong> Format dữ liệu chuẩn</li>
+</ul>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Lập trình viên giỏi không chỉ biết viết code (JavaScript) mà còn phải hiểu con đường code đó di chuyển (Networking).</p>
+<p><strong>Kiến thức từ Cisco NetAcad đã cho tôi nền tảng vững chắc để:</strong></p>
+<ul>
+<li>Debug network issues (timeout, DNS errors)</li>
+<li>Optimize performance (HTTP/2, CDN)</li>
+<li>Understand security (HTTPS, SSL certificates)</li>
+<li>Build better web applications</li>
+</ul>
+<p>Code và Network không tách rời - chúng là hai mặt của cùng một hệ thống!</p>
+
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-content">
+            <p class="footer-copyright">
+                © 2025 Taf1 IT BLOG. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/Tafi2706" target="_blank" rel="noopener noreferrer"
+                    class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/nguyen.thanhtai.623001/" target="_blank"
+                    rel="noopener noreferrer" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="mailto:nguyenthanhtai270604@gmail.com" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script src="/js/search.js"></script>
+</body>
+</html>

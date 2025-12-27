@@ -1,171 +1,175 @@
-# Personal IT Blog & Portfolio
+# Blog Lập Trình Mạng - Taf1 IT BLOG
 
-A professional, minimalist personal blog and portfolio website for a Network Security Engineer, built with Next.js 14+ and vanilla CSS.
+Website blog cá nhân về lập trình mạng, backend development và bảo mật, được xây dựng bằng Hugo Static Site Generator.
 
-## Features
+## ✨ Tính Năng
 
-- ✨ **Modern Dark Mode Theme** - Cyber security-inspired color scheme with teal/blue accents
-- 📱 **Fully Responsive** - Mobile-first design that works on all devices
-- 🎨 **Clean Design** - Minimalist, professional aesthetic
-- ⚡ **Fast Performance** - Built with Next.js 14+ App Router
-- 🔒 **Security Focus** - Blog content focused on network programming and security
+- 🎨 **Giao Diện Monochrome** - Thiết kế tối giản với tông màu trắng, xám và đen
+- 📱 **Responsive Hoàn Toàn** - Tối ưu cho mọi thiết bị
+- ⚡ **Tốc Độ Cao** - Static site generation với Hugo
+- 🔍 **Tìm Kiếm Nội Dung** - Thanh tìm kiếm bài viết thông minh
+- 📝 **10 Bài Blog** - Nội dung chất lượng về Java, JavaScript, Docker, Database, API, v.v.
 
-## Tech Stack
+## 🛠️ Công Nghệ
 
-- **Framework**: Next.js 14+ (App Router)
-- **Language**: TypeScript
-- **Styling**: Vanilla CSS with CSS Variables
-- **Icons**: Lucide React
-- **Fonts**: Google Fonts (Inter)
+- **Framework**: Hugo Static Site Generator
+- **Styling**: Vanilla CSS với CSS Variables
+- **Language**: Vietnamese
+- **Font**: Inter (Google Fonts)
 
-## Pages
+## 📄 Các Trang
 
-### 🏠 Home
-- 2-column responsive layout
-- Blog post feed with network security topics
-- Search bar for content discovery
-- "About Me" widget sidebar
+### 🏠 Trang Chủ (Home)
+- Layout 1 cột đơn giản
+- Thanh tìm kiếm nổi bật ở đầu trang
+- Grid hiển thị 10+ bài blog
+- Blog posts về:
+  - Lập trình mạng (TCP/IP, TLS/SSL, DDoS, Socket Security)
+  - Backend (Java Memory, Docker, Database Indexing, JWT Auth, Redis)
+  - Frontend (JavaScript Event Loop)
+  - API Design (REST vs GraphQL)
 
-### 👤 About
-- Professional bio sections
-- Skills showcase
-- Journey timeline
+### 👤 Giới Thiệu (About)
+- Thông tin cá nhân
+- Avatar và giới thiệu ngắn
+- Nội dung về lý lịch và mục tiêu
 
-### 💼 Portfolio
-- Project showcase with cards
-- GitHub repository links
-- Technology badges
-- Featured projects:
-  - Relo Social Network
-  - MusicResu
+### 💼 Dự Án (Portfolio)
+- Showcase 2 dự án chính:
+  - **MusicResu** - Website nghe nhạc với AI recommendation (React + ASP.NET Core + MongoDB)
+  - **Relo Social Network** - Mạng xã hội real-time (Flutter + Python FastAPI + Firebase)
+- Link GitHub repositories
+- Tech stack badges
+- Mô tả tính năng chi tiết
 
-### 📧 Contact
-- Minimalist Wix-inspired design
-- Contact information display
-- Functional contact form
-- Email and location details
+### 📧 Liên Hệ (Contact)
+- Thông tin liên hệ (Email, Số điện thoại)
+- Form gửi tin nhắn
+- Icon rõ ràng, dễ nhìn
 
-## Getting Started
+## 🚀 Hướng Dẫn Chạy
 
-### Prerequisites
+### Yêu Cầu
 
-- Node.js 18+ installed
-- npm or yarn package manager
+- Hugo Extended version 0.100+
+- Git
 
-### Installation
+### Cài Đặt
 
-Due to PowerShell execution policy restrictions, you'll need to install dependencies manually:
-
-1. **Install dependencies**:
+1. **Clone repository**:
    ```bash
-   # You may need to adjust your PowerShell execution policy first
-   # Run PowerShell as Administrator and execute:
-   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-   # Then install dependencies:
-   npm install
+   git clone https://github.com/yourusername/MyWebsite.git
+   cd MyWebsite
    ```
 
-2. **Run the development server**:
+2. **Chạy server development**:
    ```bash
-   npm run dev
+   hugo server
    ```
 
-3. **Open your browser**:
-   Navigate to [http://localhost:3000](http://localhost:3000)
+3. **Mở trình duyệt**:
+   Truy cập [http://localhost:1313](http://localhost:1313)
 
-### Build for Production
+### Build Production
 
 ```bash
-npm run build
-npm start
+hugo
 ```
 
-## Project Structure
+Output sẽ nằm trong folder `public/`
+
+## 📁 Cấu Trúc Thư Mục
 
 ```
 MyWebsite/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx          # Root layout with Navbar & Footer
-│   │   ├── page.tsx            # Home page
-│   │   ├── page.css
-│   │   ├── globals.css         # Global styles & CSS variables
-│   │   ├── about/
-│   │   │   ├── page.tsx
-│   │   │   └── about.css
-│   │   ├── portfolio/
-│   │   │   ├── page.tsx
-│   │   │   └── portfolio.css
-│   │   └── contact/
-│   │       ├── page.tsx
-│   │       └── contact.css
-│   ├── components/
-│   │   ├── Navbar.tsx
-│   │   ├── Navbar.css
-│   │   ├── Footer.tsx
-│   │   ├── Footer.css
-│   │   ├── BlogCard.tsx
-│   │   ├── BlogCard.css
-│   │   ├── SearchBar.tsx
-│   │   ├── SearchBar.css
-│   │   ├── AboutWidget.tsx
-│   │   ├── AboutWidget.css
-│   │   ├── ProjectCard.tsx
-│   │   ├── ProjectCard.css
-│   │   ├── ContactForm.tsx
-│   │   └── ContactForm.css
-│   └── data/
-│       ├── blogData.ts         # Blog post dummy data
-│       └── projectsData.ts     # Portfolio projects data
-├── package.json
-├── tsconfig.json
-├── next.config.js
+├── content/
+│   ├── blog/              # Các bài blog (markdown files)
+│   │   ├── ddos-mitigation.md
+│   │   ├── tcp-ip-handshake.md
+│   │   ├── tls-ssl-deep-dive.md
+│   │   ├── socket-security-practices.md
+│   │   ├── java-memory-garbage-collection.md
+│   │   ├── javascript-event-loop.md
+│   │   ├── rest-vs-graphql.md
+│   │   ├── docker-containers.md
+│   │   ├── database-indexing.md
+│   │   ├── jwt-authentication.md
+│   │   └── redis-caching.md
+│   ├── about.html         # Trang giới thiệu
+│   ├── portfolio.html     # Trang dự án
+│   └── contact.html       # Trang liên hệ
+├── layouts/
+│   ├── index.html         # Template trang chủ
+│   ├── _default/
+│   │   ├── baseof.html    # Base template
+│   │   ├── single.html    # Template bài viết đơn
+│   │   └── page.html
+│   └── partials/
+│       ├── navbar.html
+│       └── footer.html
+├── static/
+│   ├── css/
+│   │   └── style.css      # CSS chính (3300+ dòng)
+│   ├── img/
+│   │   └── avatar.jpg
+│   └── js/
+│       └── search.js      # JavaScript cho search
+├── config.toml            # Cấu hình Hugo
 └── README.md
 ```
 
-## Customization
+## 🎨 Tùy Chỉnh
 
-### Update Content
+### Cập Nhật Nội Dung
 
-1. **Blog Posts**: Edit `src/data/blogData.ts`
-2. **Projects**: Edit `src/data/projectsData.ts`
-3. **Contact Info**: Edit `src/app/contact/page.tsx`
-4. **About Content**: Edit `src/app/about/page.tsx`
+1. **Thêm bài blog mới**: Tạo file `.md` trong `content/blog/`
+   ```markdown
+   ---
+   title: "Tiêu đề bài viết"
+   date: 2025-12-27
+   draft: false
+   excerpt: "Mô tả ngắn gọn"
+   ---
+   
+   Nội dung bài viết...
+   ```
 
-### Styling
+2. **Sửa thông tin cá nhân**: Edit `config.toml`
+3. **Cập nhật Portfolio**: Edit `content/portfolio.html`
+4. **Thay đổi About**: Edit `content/about.html`
 
-All styles use CSS variables defined in `src/app/globals.css`. Customize the theme by modifying:
+### Theme Colors
 
-- Color palette
-- Typography (fonts, sizes)
-- Spacing
-- Border radius
-- Shadows
-- Transitions
+Website sử dụng theme monochrome với CSS variables trong `static/css/style.css`:
 
-### Color Scheme
+```css
+:root {
+    --color-bg-primary: #0f0f0f;      /* Nền đen chính */
+    --color-text-primary: #ffffff;     /* Text trắng */
+    --color-accent-primary: #ffffff;   /* Accent trắng */
+    --color-border: #404040;           /* Border xám */
+}
+```
 
-The current dark mode theme uses:
-- Primary Background: `#0a0e27`
-- Accent Primary: `#14b8a6` (Teal)
-- Accent Secondary: `#06b6d4` (Cyan)
+## 📱 Browser Support
 
-## Browser Support
+- ✅ Chrome (latest)
+- ✅ Firefox (latest)
+- ✅ Safari (latest)
+- ✅ Edge (latest)
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+## 👨‍💻 Tác Giả
 
-## License
+**Nguyễn Thành Tài**
+- Sinh viên năm cuối Công nghệ Phần mềm - HUTECH
+- Đam mê Backend Development và Network Security
+- Email: nguyenthanhtai270604@gmail.com
+- GitHub: [Tafi2706](https://github.com/Tafi2706)
 
-This project is open source and available for personal use.
+## 📝 License
 
-## Author
-
-Network Security Engineer & Developer
+Project này là mã nguồn mở và có thể sử dụng cho mục đích cá nhân.
 
 ---
 
-Made with ❤️ using Next.js 14+
+Được xây dựng với ❤️ bằng Hugo Static Site Generator
