@@ -1,117 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Taf1 IT BLOG</title><link>http://localhost:1313/</link><description>Recent content on Taf1 IT BLOG</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml"/><item><title>Chiến Lược Giảm Thiểu DDoS: Hướng Dẫn Toàn Diện</title><link>http://localhost:1313/blog/ddos-mitigation/</link><pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/ddos-mitigation/</guid><description>&lt;h1 id="chiến-lược-giảm-thiểu-ddos"&gt;Chiến Lược Giảm Thiểu DDoS&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Tấn công DDoS (Distributed Denial of Service)&lt;/strong&gt; là một trong những mối đe dọa phổ biến và nguy hiểm nhất đối với các dịch vụ trực tuyến hiện nay. Hiểu cách phát hiện và ứng phó kịp thời với các cuộc tấn công này là yếu tố then chốt để duy trì sự hoạt động liên tục (High Availability) của hệ thống.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Tóm tắt:&lt;/strong&gt; Bài viết này sẽ đi sâu vào định nghĩa, phân loại các hình thức tấn công phổ biến và đưa ra chiến lược phòng thủ đa lớp (Defense in Depth).&lt;/p&gt;</description></item><item><title>Dự Án Của Tôi</title><link>http://localhost:1313/portfolio/</link><pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/portfolio/</guid><description>&lt;div class="portfolio-page"&gt;
- &lt;div class="container"&gt;
- &lt;div class="portfolio-header"&gt;
- &lt;div class="portfolio-icon"&gt;
- &lt;svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;
- &lt;polyline points="16 18 22 12 16 6"&gt;&lt;/polyline&gt;
- &lt;polyline points="8 6 2 12 8 18"&gt;&lt;/polyline&gt;
- &lt;/svg&gt;
- &lt;/div&gt;
- &lt;h1 class="page-title"&gt;Dự Án Của Tôi&lt;/h1&gt;
- &lt;p class="page-subtitle"&gt;
- Tổng hợp các dự án cá nhân và đóng góp của tôi
- &lt;/p&gt;
- &lt;/div&gt;
-
- &lt;div class="projects-card"&gt;
- &lt;div class="project-item"&gt;
- &lt;div class="project-header"&gt;
- &lt;div class="project-title-section"&gt;
- &lt;h2 class="project-name"&gt;MusicResu&lt;/h2&gt;
- &lt;p class="project-subtitle"&gt;Nền tảng Nghe nhạc Trực tuyến &amp; Gợi ý AI&lt;/p&gt;
- &lt;/div&gt;
- &lt;a href="https://github.com/aresu-1704/musicresu-musicwebsite" target="_blank"
- rel="noopener noreferrer" class="project-link-button"&gt;
- &lt;svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"&gt;
- &lt;path
- d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /&gt;
- &lt;/svg&gt;
- &lt;span&gt;Xem Mã&lt;/span&gt;
- &lt;svg width="14" height="14" v viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;
- &lt;path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"&gt;&lt;/path&gt;
- &lt;polyline points="15 3 21 3 21 9"&gt;&lt;/polyline&gt;
- &lt;line x1="10" y1="14" x2="21" y2="3"&gt;&lt;/line&gt;
- &lt;/svg&gt;
- &lt;/a&gt;
- &lt;/div&gt;
-
- &lt;p class="project-description"&gt;Hệ thống website nghe nhạc trực tuyến Full-stack hiện đại, tập trung vào
- trải nghiệm cá nhân hóa người dùng. Nổi bật với tính năng gợi ý bài hát thông minh dựa trên lịch sử
- nghe và tích hợp cổng thanh toán trực tuyến.&lt;/p&gt;</description></item><item><title>Giới Thiệu</title><link>http://localhost:1313/about/</link><pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/about/</guid><description>&lt;div class="about-page"&gt;
- &lt;div class="container"&gt;
- &lt;div class="about-card-unified"&gt;
- &lt;div class="about-avatar-section"&gt;
- &lt;div class="about-avatar-wrapper"&gt;
- &lt;img src="http://localhost:1313/img/avatar.jpg" alt="Nguyễn Thành Tài" class="about-avatar-image"&gt;
- &lt;/div&gt;
- &lt;/div&gt;
-
- &lt;h1 class="about-greeting"&gt;Nguyễn Thành Tài&lt;/h1&gt;
- &lt;p class="about-role"&gt;Sinh viên công nghệ phần mềm tại HUTECH&lt;/p&gt;
-
- &lt;h2 class="about-content-heading"&gt;Giới Thiệu Bản Thân&lt;/h2&gt;
- &lt;p class="about-bio-content"&gt;
- Mình là sinh viên năm cuối chuyên ngành công nghệ phần mềm tại trường Đại học HUTECH
- (Đại học Công nghệ TP.HCM). Với nền tảng vững chắc về khoa học máy tính
- và đam mê xây dựng hệ thống, tôi mong muốn áp dụng kiến thức của mình để giải quyết các vấn đề thực tế.
- &lt;/p&gt;</description></item><item><title>Hiểu về Bắt Tay TCP/IP (TCP/IP Handshake)</title><link>http://localhost:1313/blog/tcp-ip-handshake/</link><pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/tcp-ip-handshake/</guid><description>&lt;h1 id="giới-thiệu"&gt;Giới thiệu&lt;/h1&gt;
-&lt;p&gt;TCP/IP là một trong những giao thức quan trọng nhất của Internet hiện đại. Nó đảm bảo rằng dữ liệu được truyền một cách đáng tin cậy giữa các thiết bị trên mạng. Một trong những cơ chế cốt lõi của TCP là &lt;strong&gt;quy trình bắt tay ba bước (Three-Way Handshake)&lt;/strong&gt;, giúp thiết lập kết nối trước khi truyền dữ liệu.&lt;/p&gt;
-&lt;h2 id="quy-trình-bắt-tay-ba-bước"&gt;Quy trình Bắt Tay Ba Bước&lt;/h2&gt;
-&lt;h3 id="bước-1-syn-synchronize"&gt;Bước 1: SYN (Synchronize)&lt;/h3&gt;
-&lt;p&gt;Client khởi tạo kết nối bằng cách gửi một gói &lt;strong&gt;SYN&lt;/strong&gt; đến server. Gói này chứa số thứ tự ban đầu (Initial Sequence Number – ISN) để đồng bộ hóa việc truyền dữ liệu.&lt;/p&gt;</description></item><item><title>Liên Hệ</title><link>http://localhost:1313/contact/</link><pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/contact/</guid><description>&lt;div class="contact-page"&gt;
- &lt;div class="container"&gt;
- &lt;div class="contact-header-section"&gt;
- &lt;h1 class="page-title"&gt;Liên Hệ&lt;/h1&gt;
- &lt;p class="page-subtitle"&gt;
- Hãy liên hệ với tôi để cộng tác hoặc chỉ đơn giản là chào hỏi
- &lt;/p&gt;
- &lt;/div&gt;
-
- &lt;div class="contact-card-unified"&gt;
- &lt;div class="contact-info-section"&gt;
- &lt;h2 class="contact-info-title"&gt;Thông Tin Liên Hệ&lt;/h2&gt;
- &lt;p class="contact-info-description"&gt;
- Tôi luôn sẵn sàng thảo luận về các dự án mới, ý tưởng sáng tạo hoặc cơ hội để trở thành một phần
- trong tầm nhìn của bạn.
- &lt;/p&gt;
-
- &lt;div class="contact-details"&gt;
- &lt;div class="contact-detail-item"&gt;
- &lt;div class="contact-icon"&gt;
- &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;
- &lt;path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"&gt;
- &lt;/path&gt;
- &lt;polyline points="22,6 12,13 2,6"&gt;&lt;/polyline&gt;
- &lt;/svg&gt;
- &lt;/div&gt;
- &lt;div class="contact-detail-content"&gt;
- &lt;h3 class="contact-detail-label"&gt;Email&lt;/h3&gt;
- &lt;p class="contact-detail-value"&gt;
- &lt;a href="mailto:nguyenthanhtai270604@gmail.com"&gt;nguyenthanhtai270604@gmail.com&lt;/a&gt;
- &lt;/p&gt;
- &lt;/div&gt;
- &lt;/div&gt;
-
- &lt;div class="contact-detail-item"&gt;
- &lt;div class="contact-icon"&gt;
- &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;
- &lt;path
- d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"&gt;
- &lt;/path&gt;
- &lt;/svg&gt;
- &lt;/div&gt;
- &lt;div class="contact-detail-content"&gt;
- &lt;h3 class="contact-detail-label"&gt;Số Điện Thoại&lt;/h3&gt;
- &lt;p class="contact-detail-value"&gt;
- &lt;a href="tel:+84924140389"&gt;+84 924 140 389&lt;/a&gt;
- &lt;/p&gt;</description></item><item><title>Thực Hành Tốt Nhất về Bảo Mật Lập Trình Socket</title><link>http://localhost:1313/blog/socket-security-practices/</link><pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/socket-security-practices/</guid><description>&lt;h1 id="bảo-mật-trong-socket-programming"&gt;Bảo Mật Trong Socket Programming&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Lập trình socket&lt;/strong&gt; là kỹ năng nền tảng và quan trọng trong phát triển ứng dụng mạng. Tuy nhiên, quyền năng càng lớn thì rủi ro càng cao; nếu không được xử lý đúng cách, socket có thể trở thành cửa ngõ cho hàng loạt lỗ hổng bảo mật nghiêm trọng.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Mục tiêu:&lt;/strong&gt; Hiểu và áp dụng các thực hành tốt nhất để bảo vệ hệ thống và người dùng khỏi các cuộc tấn công mạng phổ biến.&lt;/p&gt;</description></item><item><title>Tìm Hiểu Sâu về Giao Thức TLS/SSL</title><link>http://localhost:1313/blog/tls-ssl-deep-dive/</link><pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/tls-ssl-deep-dive/</guid><description>&lt;h1 id="tlsssl--nền-tảng-bảo-mật-web"&gt;TLS/SSL – Nền tảng bảo mật Web&lt;/h1&gt;
-&lt;p&gt;Transport Layer Security (TLS) và tiền thân của nó SSL (Secure Sockets Layer) là các giao thức mã hóa giúp bảo mật truyền thông qua Internet. Hiểu rõ cách TLS/SSL hoạt động là điều cần thiết cho bất kỳ developer nào làm việc với ứng dụng web hay API.&lt;/p&gt;
-&lt;h2 id="tls-hoạt-động-như-thế-nào"&gt;TLS hoạt động như thế nào?&lt;/h2&gt;
-&lt;h3 id="handshake-protocol"&gt;Handshake Protocol&lt;/h3&gt;
-&lt;p&gt;TLS sử dụng quy trình bắt tay phức tạp để thiết lập kết nối an toàn:&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taf1 IT BLOG</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Taf1 IT BLOG</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chiến Lược Giảm Thiểu DDoS: Hướng Dẫn Toàn Diện</title>
+      <link>http://localhost:1313/blog/ddos-mitigation/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/ddos-mitigation/</guid>
+      <description>&lt;h1 id=&#34;chiến-lược-giảm-thiểu-ddos&#34;&gt;Chiến Lược Giảm Thiểu DDoS&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tấn công DDoS (Distributed Denial of Service)&lt;/strong&gt; là một trong những mối đe dọa phổ biến và nguy hiểm nhất đối với các dịch vụ trực tuyến hiện nay. Hiểu cách phát hiện và ứng phó kịp thời với các cuộc tấn công này là yếu tố then chốt để duy trì sự hoạt động liên tục (High Availability) của hệ thống.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tóm tắt:&lt;/strong&gt; Bài viết này sẽ đi sâu vào định nghĩa, phân loại các hình thức tấn công phổ biến và đưa ra chiến lược phòng thủ đa lớp (Defense in Depth).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dự Án Của Tôi</title>
+      <link>http://localhost:1313/portfolio/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/</guid>
+      <description>&lt;div class=&#34;portfolio-page&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;container&#34;&gt;&#xD;&#xA;        &lt;div class=&#34;portfolio-header&#34;&gt;&#xD;&#xA;            &lt;h1 class=&#34;page-title&#34;&gt;Dự Án Của Tôi&lt;/h1&gt;&#xD;&#xA;            &lt;p class=&#34;page-subtitle&#34;&gt;&#xD;&#xA;                Tổng hợp các dự án cá nhân và đóng góp của tôi&#xD;&#xA;            &lt;/p&gt;&#xD;&#xA;        &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;        &lt;div class=&#34;projects-card&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;project-item&#34;&gt;&#xD;&#xA;                &lt;div class=&#34;project-header&#34;&gt;&#xD;&#xA;                    &lt;div class=&#34;project-title-section&#34;&gt;&#xD;&#xA;                        &lt;h2 class=&#34;project-name&#34;&gt;MusicResu&lt;/h2&gt;&#xD;&#xA;                        &lt;p class=&#34;project-subtitle&#34;&gt;Nền tảng Nghe nhạc Trực tuyến &amp; Gợi ý AI&lt;/p&gt;&#xD;&#xA;                    &lt;/div&gt;&#xD;&#xA;                    &lt;a href=&#34;https://github.com/aresu-1704/musicresu-musicwebsite&#34; target=&#34;_blank&#34;&#xD;&#xA;                        rel=&#34;noopener noreferrer&#34; class=&#34;project-link-button&#34;&gt;&#xD;&#xA;                        &lt;svg width=&#34;18&#34; height=&#34;18&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&#xD;&#xA;                            &lt;path&#xD;&#xA;                                d=&#34;M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z&#34; /&gt;&#xD;&#xA;                        &lt;/svg&gt;&#xD;&#xA;                        &lt;span&gt;Xem Mã&lt;/span&gt;&#xD;&#xA;                        &lt;svg width=&#34;14&#34; height=&#34;14&#34; v viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&gt;&#xD;&#xA;                            &lt;path d=&#34;M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&#34;&gt;&lt;/path&gt;&#xD;&#xA;                            &lt;polyline points=&#34;15 3 21 3 21 9&#34;&gt;&lt;/polyline&gt;&#xD;&#xA;                            &lt;line x1=&#34;10&#34; y1=&#34;14&#34; x2=&#34;21&#34; y2=&#34;3&#34;&gt;&lt;/line&gt;&#xD;&#xA;                        &lt;/svg&gt;&#xD;&#xA;                    &lt;/a&gt;&#xD;&#xA;                &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;                &lt;p class=&#34;project-description&#34;&gt;Hệ thống website nghe nhạc trực tuyến Full-stack hiện đại, tập trung vào&#xD;&#xA;                    trải nghiệm cá nhân hóa người dùng. Nổi bật với tính năng gợi ý bài hát thông minh dựa trên lịch sử&#xD;&#xA;                    nghe và tích hợp cổng thanh toán trực tuyến.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Giới Thiệu</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;div class=&#34;about-page&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;container&#34;&gt;&#xD;&#xA;        &lt;div class=&#34;about-card-unified&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;about-avatar-section&#34;&gt;&#xD;&#xA;                &lt;div class=&#34;about-avatar-wrapper&#34;&gt;&#xD;&#xA;                    &lt;img src=&#34;http://localhost:1313/img/avatar.jpg&#34; alt=&#34;Nguyễn Thành Tài&#34; class=&#34;about-avatar-image&#34;&gt;&#xD;&#xA;                &lt;/div&gt;&#xD;&#xA;            &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h1 class=&#34;about-greeting&#34;&gt;Nguyễn Thành Tài&lt;/h1&gt;&#xD;&#xA;            &lt;p class=&#34;about-role&#34;&gt;Sinh viên công nghệ phần mềm tại HUTECH&lt;/p&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2 class=&#34;about-content-heading&#34;&gt;Giới Thiệu Bản Thân&lt;/h2&gt;&#xD;&#xA;            &lt;p class=&#34;about-bio-content&#34;&gt;&#xD;&#xA;                Mình là sinh viên năm cuối chuyên ngành công nghệ phần mềm tại trường Đại học HUTECH&#xD;&#xA;                (Đại học Công nghệ TP.HCM). Với nền tảng vững chắc về khoa học máy tính&#xD;&#xA;                và đam mê xây dựng hệ thống, tôi mong muốn áp dụng kiến thức của mình để giải quyết các vấn đề thực tế.&#xD;&#xA;            &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hiểu về Bắt Tay TCP/IP (TCP/IP Handshake)</title>
+      <link>http://localhost:1313/blog/tcp-ip-handshake/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tcp-ip-handshake/</guid>
+      <description>&lt;h1 id=&#34;giới-thiệu&#34;&gt;Giới thiệu&lt;/h1&gt;&#xA;&lt;p&gt;TCP/IP là một trong những giao thức quan trọng nhất của Internet hiện đại. Nó đảm bảo rằng dữ liệu được truyền một cách đáng tin cậy giữa các thiết bị trên mạng. Một trong những cơ chế cốt lõi của TCP là &lt;strong&gt;quy trình bắt tay ba bước (Three-Way Handshake)&lt;/strong&gt;, giúp thiết lập kết nối trước khi truyền dữ liệu.&lt;/p&gt;&#xA;&lt;h2 id=&#34;quy-trình-bắt-tay-ba-bước&#34;&gt;Quy trình Bắt Tay Ba Bước&lt;/h2&gt;&#xA;&lt;h3 id=&#34;bước-1-syn-synchronize&#34;&gt;Bước 1: SYN (Synchronize)&lt;/h3&gt;&#xA;&lt;p&gt;Client khởi tạo kết nối bằng cách gửi một gói &lt;strong&gt;SYN&lt;/strong&gt; đến server. Gói này chứa số thứ tự ban đầu (Initial Sequence Number – ISN) để đồng bộ hóa việc truyền dữ liệu.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Liên Hệ</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;div class=&#34;contact-page&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;container&#34;&gt;&#xD;&#xA;        &lt;div class=&#34;contact-header-section&#34;&gt;&#xD;&#xA;            &lt;h1 class=&#34;page-title&#34;&gt;Liên Hệ&lt;/h1&gt;&#xD;&#xA;            &lt;p class=&#34;page-subtitle&#34;&gt;&#xD;&#xA;                Hãy liên hệ với tôi để cộng tác hoặc chỉ đơn giản là chào hỏi&#xD;&#xA;            &lt;/p&gt;&#xD;&#xA;        &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;        &lt;div class=&#34;contact-card-unified&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;contact-info-section&#34;&gt;&#xD;&#xA;                &lt;h2 class=&#34;contact-info-title&#34;&gt;Thông Tin Liên Hệ&lt;/h2&gt;&#xD;&#xA;                &lt;p class=&#34;contact-info-description&#34;&gt;&#xD;&#xA;                    Tôi luôn sẵn sàng thảo luận về các dự án mới, ý tưởng sáng tạo hoặc cơ hội để trở thành một phần&#xD;&#xA;                    trong tầm nhìn của bạn.&#xD;&#xA;                &lt;/p&gt;&#xD;&#xA;&#xD;&#xA;                &lt;div class=&#34;contact-details&#34;&gt;&#xD;&#xA;                    &lt;div class=&#34;contact-detail-item&#34;&gt;&#xD;&#xA;                        &lt;div class=&#34;contact-icon&#34;&gt;&#xD;&#xA;                            &lt;svg width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&gt;&#xD;&#xA;                                &lt;path d=&#34;M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z&#34;&gt;&#xD;&#xA;                                &lt;/path&gt;&#xD;&#xA;                                &lt;polyline points=&#34;22,6 12,13 2,6&#34;&gt;&lt;/polyline&gt;&#xD;&#xA;                            &lt;/svg&gt;&#xD;&#xA;                        &lt;/div&gt;&#xD;&#xA;                        &lt;div class=&#34;contact-detail-content&#34;&gt;&#xD;&#xA;                            &lt;h3 class=&#34;contact-detail-label&#34;&gt;Email&lt;/h3&gt;&#xD;&#xA;                            &lt;p class=&#34;contact-detail-value&#34;&gt;&#xD;&#xA;                                &lt;a href=&#34;mailto:nguyenthanhtai270604@gmail.com&#34;&gt;nguyenthanhtai270604@gmail.com&lt;/a&gt;&#xD;&#xA;                            &lt;/p&gt;&#xD;&#xA;                        &lt;/div&gt;&#xD;&#xA;                    &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;                    &lt;div class=&#34;contact-detail-item&#34;&gt;&#xD;&#xA;                        &lt;div class=&#34;contact-icon&#34;&gt;&#xD;&#xA;                            &lt;svg width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34;&gt;&#xD;&#xA;                                &lt;path&#xD;&#xA;                                    d=&#34;M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z&#34;&gt;&#xD;&#xA;                                &lt;/path&gt;&#xD;&#xA;                            &lt;/svg&gt;&#xD;&#xA;                        &lt;/div&gt;&#xD;&#xA;                        &lt;div class=&#34;contact-detail-content&#34;&gt;&#xD;&#xA;                            &lt;h3 class=&#34;contact-detail-label&#34;&gt;Số Điện Thoại&lt;/h3&gt;&#xD;&#xA;                            &lt;p class=&#34;contact-detail-value&#34;&gt;&#xD;&#xA;                                &lt;a href=&#34;tel:+84924140389&#34;&gt;+84 924 140 389&lt;/a&gt;&#xD;&#xA;                            &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thực Hành Tốt Nhất về Bảo Mật Lập Trình Socket</title>
+      <link>http://localhost:1313/blog/socket-security-practices/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/socket-security-practices/</guid>
+      <description>&lt;h1 id=&#34;bảo-mật-trong-socket-programming&#34;&gt;Bảo Mật Trong Socket Programming&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Lập trình socket&lt;/strong&gt; là kỹ năng nền tảng và quan trọng trong phát triển ứng dụng mạng. Tuy nhiên, quyền năng càng lớn thì rủi ro càng cao; nếu không được xử lý đúng cách, socket có thể trở thành cửa ngõ cho hàng loạt lỗ hổng bảo mật nghiêm trọng.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Mục tiêu:&lt;/strong&gt; Hiểu và áp dụng các thực hành tốt nhất để bảo vệ hệ thống và người dùng khỏi các cuộc tấn công mạng phổ biến.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tìm Hiểu Sâu về Giao Thức TLS/SSL</title>
+      <link>http://localhost:1313/blog/tls-ssl-deep-dive/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tls-ssl-deep-dive/</guid>
+      <description>&lt;h1 id=&#34;tlsssl--nền-tảng-bảo-mật-web&#34;&gt;TLS/SSL – Nền tảng bảo mật Web&lt;/h1&gt;&#xA;&lt;p&gt;Transport Layer Security (TLS) và tiền thân của nó SSL (Secure Sockets Layer) là các giao thức mã hóa giúp bảo mật truyền thông qua Internet. Hiểu rõ cách TLS/SSL hoạt động là điều cần thiết cho bất kỳ developer nào làm việc với ứng dụng web hay API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;tls-hoạt-động-như-thế-nào&#34;&gt;TLS hoạt động như thế nào?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;handshake-protocol&#34;&gt;Handshake Protocol&lt;/h3&gt;&#xA;&lt;p&gt;TLS sử dụng quy trình bắt tay phức tạp để thiết lập kết nối an toàn:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java: Quản Lý Bộ Nhớ và Garbage Collection</title>
+      <link>http://localhost:1313/blog/java-memory-garbage-collection/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/java-memory-garbage-collection/</guid>
+      <description>&lt;h1 id=&#34;java-memory-management--garbage-collection&#34;&gt;Java Memory Management &amp;amp; Garbage Collection&lt;/h1&gt;&#xA;&lt;p&gt;Khác với C++, Java giải phóng lập trình viên khỏi gánh nặng quản lý bộ nhớ thủ công nhờ vào cơ chế &lt;strong&gt;Garbage Collection (GC)&lt;/strong&gt;. Tuy nhiên, hiểu rõ cách JVM sử dụng bộ nhớ là điều kiện tiên quyết để viết ứng dụng hiệu năng cao và tránh lỗi &lt;code&gt;OutOfMemoryError&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-cấu-trúc-bộ-nhớ-jvm&#34;&gt;1. Cấu Trúc Bộ Nhớ JVM&lt;/h2&gt;&#xA;&lt;p&gt;Bộ nhớ trong Java chủ yếu được chia thành hai phần chính: &lt;strong&gt;Stack&lt;/strong&gt; và &lt;strong&gt;Heap&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hiểu Sâu Về Event Loop Trong JavaScript</title>
+      <link>http://localhost:1313/blog/javascript-event-loop/</link>
+      <pubDate>Tue, 16 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/javascript-event-loop/</guid>
+      <description>&lt;h1 id=&#34;javascript-event-loop-trái-tim-của-asynchronous&#34;&gt;JavaScript Event Loop: Trái Tim Của Asynchronous&lt;/h1&gt;&#xA;&lt;p&gt;JavaScript là ngôn ngữ &lt;strong&gt;đơn luồng (single-threaded)&lt;/strong&gt;. Điều này có nghĩa là tại một thời điểm, nó chỉ có thể thực hiện một tác vụ duy nhất. Vậy tại sao Node.js có thể xử lý hàng nghìn request đồng thời hay trình duyệt có thể vừa tải ảnh vừa phản hồi click chuột? Câu trả lời nằm ở &lt;strong&gt;Event Loop&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-các-thành-phần-chính&#34;&gt;1. Các Thành Phần Chính&lt;/h2&gt;&#xA;&lt;p&gt;Để hiểu Event Loop, chúng ta cần nắm 3 khái niệm:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>REST API vs GraphQL: Lựa Chọn Kiến Trúc Backend Phù Hợp</title>
+      <link>http://localhost:1313/blog/rest-vs-graphql/</link>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/rest-vs-graphql/</guid>
+      <description>&lt;h1 id=&#34;rest-api-vs-graphql-chọn-kiến-trúc-nào&#34;&gt;REST API vs GraphQL: Chọn Kiến Trúc Nào?&lt;/h1&gt;&#xA;&lt;p&gt;Khi thiết kế backend, một trong những quyết định quan trọng nhất là lựa chọn kiến trúc API: &lt;strong&gt;REST&lt;/strong&gt; hay &lt;strong&gt;GraphQL&lt;/strong&gt;. Cả hai đều có điểm mạnh riêng, và lựa chọn sai có thể dẫn đến over-fetching, under-fetching, hoặc codebase phức tạp không cần thiết.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-rest-api-kiến-trúc-truyền-thống&#34;&gt;1. REST API: Kiến Trúc Truyền Thống&lt;/h2&gt;&#xA;&lt;p&gt;REST (Representational State Transfer) sử dụng các endpoint cố định với HTTP methods (GET, POST, PUT, DELETE).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker và Container: Hiểu Rõ Từ Cơ Bản Đến Nâng Cao</title>
+      <link>http://localhost:1313/blog/docker-containers/</link>
+      <pubDate>Sun, 14 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/docker-containers/</guid>
+      <description>&lt;h1 id=&#34;docker-triển-khai-ứng-dụng-nhẹ-hơn-với-container&#34;&gt;Docker: Triển Khai Ứng Dụng Nhẹ Hơn Với Container&lt;/h1&gt;&#xA;&lt;p&gt;Docker đã cách mạng hóa cách chúng ta đóng gói và triển khai ứng dụng. Thay vì cài đặt môi trường thủ công trên mỗi server, Docker cho phép bạn &amp;ldquo;đóng hộp&amp;rdquo; toàn bộ ứng dụng + dependencies vào một &lt;strong&gt;container&lt;/strong&gt; có thể chạy ở bất kỳ đâu.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-container-vs-virtual-machine&#34;&gt;1. Container vs Virtual Machine&lt;/h2&gt;&#xA;&lt;h3 id=&#34;virtual-machine-vm&#34;&gt;Virtual Machine (VM)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Chạy &lt;strong&gt;toàn bộ hệ điều hành&lt;/strong&gt; (OS) riêng biệt.&lt;/li&gt;&#xA;&lt;li&gt;Nặng, khởi động chậm (phút).&lt;/li&gt;&#xA;&lt;li&gt;Cách ly hoàn toàn về mặt tài nguyên.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;docker-container&#34;&gt;Docker Container&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Chia sẻ kernel&lt;/strong&gt; của host OS.&lt;/li&gt;&#xA;&lt;li&gt;Nhẹ, khởi động cực nhanh (giây).&lt;/li&gt;&#xA;&lt;li&gt;Cách ly ở mức process, không phải OS.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VM: App -&amp;gt; Guest OS -&amp;gt; Hypervisor -&amp;gt; Host OS -&amp;gt; Hardware&#xD;&#xA;Container: App -&amp;gt; Docker Engine -&amp;gt; Host OS -&amp;gt; Hardware&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-các-khái-niệm-cốt-lõi&#34;&gt;2. Các Khái Niệm Cốt Lõi&lt;/h2&gt;&#xA;&lt;h3 id=&#34;docker-image&#34;&gt;Docker Image&lt;/h3&gt;&#xA;&lt;p&gt;Là &amp;ldquo;template&amp;rdquo; chỉ đọc chứa code + dependencies. Được build từ &lt;strong&gt;Dockerfile&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Database Indexing: Tăng Tốc Truy Vấn SQL</title>
+      <link>http://localhost:1313/blog/database-indexing/</link>
+      <pubDate>Sat, 13 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/database-indexing/</guid>
+      <description>&lt;h1 id=&#34;database-indexing-chìa-khóa-của-performance&#34;&gt;Database Indexing: Chìa Khóa Của Performance&lt;/h1&gt;&#xA;&lt;p&gt;Một câu query chạy 5 giây trên development nhưng timeout 30 giây trên production với hàng triệu records? Nguyên nhân thường là &lt;strong&gt;thiếu index&lt;/strong&gt; hoặc index không hiệu quả.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-index-là-gì&#34;&gt;1. Index Là Gì?&lt;/h2&gt;&#xA;&lt;p&gt;Index trong database giống như &lt;strong&gt;mục lục sách&lt;/strong&gt;. Thay vì đọc từng trang (Full Table Scan), bạn nhảy thẳng đến đúng trang cần tìm.&lt;/p&gt;&#xA;&lt;h3 id=&#34;ví-dụ-không-có-index&#34;&gt;Ví dụ không có Index&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; users &lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; email &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;tai@example.com&amp;#39;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- Database phải scan toàn bộ 1,000,000 rows&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;sau-khi-thêm-index&#34;&gt;Sau khi thêm Index&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;INDEX&lt;/span&gt; idx_email &lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; users(email);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- Giờ database chỉ cần O(log n) lookups thay vì O(n)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-các-loại-index&#34;&gt;2. Các Loại Index&lt;/h2&gt;&#xA;&lt;h3 id=&#34;b-tree-index-mặc-định&#34;&gt;B-Tree Index (Mặc định)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Phù hợp với: Range queries (&lt;code&gt;&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;&lt;/code&gt;, &lt;code&gt;BETWEEN&lt;/code&gt;), equality (&lt;code&gt;=&lt;/code&gt;).&lt;/li&gt;&#xA;&lt;li&gt;Cấu trúc: Cây nhị phân cân bằng, truy xuất O(log n).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- Hiệu quả với B-Tree&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; age &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; name &lt;span style=&#34;color:#66d9ef&#34;&gt;LIKE&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Tai%&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;-- % ở cuối&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;hash-index&#34;&gt;Hash Index&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Phù hợp với: Equality queries (&lt;code&gt;=&lt;/code&gt;) only.&lt;/li&gt;&#xA;&lt;li&gt;Không hỗ trợ range queries.&lt;/li&gt;&#xA;&lt;li&gt;Cực nhanh O(1) cho exact match.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;composite-index-index-tổng-hợp&#34;&gt;Composite Index (Index tổng hợp)&lt;/h3&gt;&#xA;&lt;p&gt;Index trên nhiều cột. &lt;strong&gt;Thứ tự cột quan trọng!&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JWT Authentication: Bảo Mật API Hiện Đại</title>
+      <link>http://localhost:1313/blog/jwt-authentication/</link>
+      <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/jwt-authentication/</guid>
+      <description>&lt;h1 id=&#34;jwt-authentication-stateless-security-cho-api&#34;&gt;JWT Authentication: Stateless Security Cho API&lt;/h1&gt;&#xA;&lt;p&gt;Khi xây dựng RESTful API, một trong những thách thức lớn nhất là &lt;strong&gt;authentication&lt;/strong&gt; (xác thực người dùng). JWT (JSON Web Token) đã trở thành giải pháp phổ biến nhất nhờ tính &lt;strong&gt;stateless&lt;/strong&gt; và khả năng mở rộng tốt.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-jwt-hoạt-động-như-thế-nào&#34;&gt;1. JWT Hoạt Động Như Thế Nào?&lt;/h2&gt;&#xA;&lt;p&gt;JWT là một chuỗi string được mã hóa gồm 3 phần:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;header.payload.signature&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;header&#34;&gt;Header&lt;/h3&gt;&#xA;&lt;p&gt;Chứa thông tin về thuật toán mã hóa (thường là HS256 hoặc RS256).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Redis Caching Strategy: Tăng Hiệu Năng Backend</title>
+      <link>http://localhost:1313/blog/redis-caching/</link>
+      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/redis-caching/</guid>
+      <description>&lt;h1 id=&#34;redis-caching-tăng-tốc-ứng-dụng-10-100-lần&#34;&gt;Redis Caching: Tăng Tốc Ứng Dụng 10-100 Lần&lt;/h1&gt;&#xA;&lt;p&gt;Khi database trở thành bottleneck của hệ thống, &lt;strong&gt;caching&lt;/strong&gt; là giải pháp đầu tiên bạn nên nghĩ đến. Redis là in-memory data store phổ biến nhất cho việc này, giúp giảm database load và tăng response time đáng kể.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tại-sao-cần-redis&#34;&gt;1. Tại Sao Cần Redis?&lt;/h2&gt;&#xA;&lt;h3 id=&#34;vấn-đề-thực-tế&#34;&gt;Vấn Đề Thực Tế&lt;/h3&gt;&#xA;&lt;p&gt;Mỗi lần user truy cập profile, ứng dụng query database:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; users &lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; id &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;123&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nếu có 10,000 requests/giây, database phải xử lý 10,000 queries cho &lt;strong&gt;cùng một dữ liệu không đổi&lt;/strong&gt;. Lãng phí!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Lập Trình Mạng">
+    <meta name="author" content="Nguyễn Thành Tài">
+    <title>Docker và Container: Hiểu Rõ Từ Cơ Bản Đến Nâng Cao | Taf1 IT BLOG</title>
+   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container navbar-container">
+        <a href="/" class="navbar-logo">
+            <img src="/img/logo.jpg" alt="Logo" class="logo-image">
+            <span class="navbar-title">Taf1 IT BLOG</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about/" class="">About</a></li>
+            <li><a href="/portfolio/" class="">Portfolio</a></li>
+            <li><a href="/contact/" class="">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('active');
+    });
+</script>
+    
+    <main>
+        
+<div class="content-page">
+    <div class="container">
+        <h1 id="docker-triển-khai-ứng-dụng-nhẹ-hơn-với-container">Docker: Triển Khai Ứng Dụng Nhẹ Hơn Với Container</h1>
+<p>Docker đã cách mạng hóa cách chúng ta đóng gói và triển khai ứng dụng. Thay vì cài đặt môi trường thủ công trên mỗi server, Docker cho phép bạn &ldquo;đóng hộp&rdquo; toàn bộ ứng dụng + dependencies vào một <strong>container</strong> có thể chạy ở bất kỳ đâu.</p>
+<h2 id="1-container-vs-virtual-machine">1. Container vs Virtual Machine</h2>
+<h3 id="virtual-machine-vm">Virtual Machine (VM)</h3>
+<ul>
+<li>Chạy <strong>toàn bộ hệ điều hành</strong> (OS) riêng biệt.</li>
+<li>Nặng, khởi động chậm (phút).</li>
+<li>Cách ly hoàn toàn về mặt tài nguyên.</li>
+</ul>
+<h3 id="docker-container">Docker Container</h3>
+<ul>
+<li><strong>Chia sẻ kernel</strong> của host OS.</li>
+<li>Nhẹ, khởi động cực nhanh (giây).</li>
+<li>Cách ly ở mức process, không phải OS.</li>
+</ul>
+<pre tabindex="0"><code>VM: App -&gt; Guest OS -&gt; Hypervisor -&gt; Host OS -&gt; Hardware
+Container: App -&gt; Docker Engine -&gt; Host OS -&gt; Hardware
+</code></pre><hr>
+<h2 id="2-các-khái-niệm-cốt-lõi">2. Các Khái Niệm Cốt Lõi</h2>
+<h3 id="docker-image">Docker Image</h3>
+<p>Là &ldquo;template&rdquo; chỉ đọc chứa code + dependencies. Được build từ <strong>Dockerfile</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">node:18-alpine</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> package*.json ./<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> npm install<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;npm&#34;</span>, <span style="color:#e6db74">&#34;start&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h3 id="docker-container-1">Docker Container</h3>
+<p>Là &ldquo;instance&rdquo; đang chạy của Image. Có thể tạo nhiều container từ 1 image.</p>
+<h3 id="docker-compose">Docker Compose</h3>
+<p>Công cụ để chạy nhiều container cùng lúc (ví dụ: app + database + redis).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.8&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">web</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build</span>: <span style="color:#ae81ff">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3000:3000&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">db</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">postgres:15</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">secret</span>
+</span></span></code></pre></div><hr>
+<h2 id="3-lợi-ích-trong-thực-tế">3. Lợi Ích Trong Thực Tế</h2>
+<h3 id="consistency-tính-nhất-quán">Consistency (Tính nhất quán)</h3>
+<p>&ldquo;It works on my machine&rdquo; không còn là vấn đề. Container chạy giống nhau trên laptop dev, staging server và production.</p>
+<h3 id="scalability-mở-rộng-dễ-dàng">Scalability (Mở rộng dễ dàng)</h3>
+<p>Cần thêm capacity? Chỉ cần chạy thêm container. Kubernetes giúp tự động hóa việc này.</p>
+<h3 id="cicd-pipeline">CI/CD Pipeline</h3>
+<p>Docker là &ldquo;xương sống&rdquo; của DevOps hiện đại. Build image -&gt; Push lên Registry -&gt; Deploy tự động.</p>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Docker không chỉ là trend, nó đã trở thành <strong>standard</strong> trong phát triển phần mềm hiện đại. Nếu bạn chưa biết Docker, đây là lúc bắt đầu học!</p>
+
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-content">
+            <p class="footer-copyright">
+                © 2025 Taf1 IT BLOG. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/Tafi2706" target="_blank" rel="noopener noreferrer"
+                    class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/nguyen.thanhtai.623001/" target="_blank"
+                    rel="noopener noreferrer" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="mailto:nguyenthanhtai270604@gmail.com" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script src="/js/search.js"></script>
+</body>
+</html>

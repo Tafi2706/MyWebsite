@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Lập Trình Mạng">
+    <meta name="author" content="Nguyễn Thành Tài">
+    <title>REST API vs GraphQL: Lựa Chọn Kiến Trúc Backend Phù Hợp | Taf1 IT BLOG</title>
+   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container navbar-container">
+        <a href="/" class="navbar-logo">
+            <img src="/img/logo.jpg" alt="Logo" class="logo-image">
+            <span class="navbar-title">Taf1 IT BLOG</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about/" class="">About</a></li>
+            <li><a href="/portfolio/" class="">Portfolio</a></li>
+            <li><a href="/contact/" class="">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('active');
+    });
+</script>
+    
+    <main>
+        
+<div class="content-page">
+    <div class="container">
+        <h1 id="rest-api-vs-graphql-chọn-kiến-trúc-nào">REST API vs GraphQL: Chọn Kiến Trúc Nào?</h1>
+<p>Khi thiết kế backend, một trong những quyết định quan trọng nhất là lựa chọn kiến trúc API: <strong>REST</strong> hay <strong>GraphQL</strong>. Cả hai đều có điểm mạnh riêng, và lựa chọn sai có thể dẫn đến over-fetching, under-fetching, hoặc codebase phức tạp không cần thiết.</p>
+<h2 id="1-rest-api-kiến-trúc-truyền-thống">1. REST API: Kiến Trúc Truyền Thống</h2>
+<p>REST (Representational State Transfer) sử dụng các endpoint cố định với HTTP methods (GET, POST, PUT, DELETE).</p>
+<h3 id="ưu-điểm">Ưu điểm</h3>
+<ul>
+<li><strong>Đơn giản, dễ hiểu:</strong> Mỗi resource có một URL riêng.</li>
+<li><strong>Caching hiệu quả:</strong> HTTP caching hoạt động tự nhiên với GET requests.</li>
+<li><strong>Tooling phong phú:</strong> Swagger, Postman, REST Client&hellip;</li>
+</ul>
+<h3 id="nhược-điểm">Nhược điểm</h3>
+<ul>
+<li><strong>Over-fetching:</strong> Client nhận nhiều dữ liệu hơn cần thiết.</li>
+<li><strong>Under-fetching:</strong> Phải gọi nhiều endpoint để lấy đủ dữ liệu.</li>
+<li><strong>Versioning phức tạp:</strong> Khi API thay đổi, phải maintain nhiều version (<code>/api/v1</code>, <code>/api/v2</code>&hellip;).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// REST: Cần 2 request để lấy user + posts
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">users</span><span style="color:#f92672">/</span><span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">users</span><span style="color:#f92672">/</span><span style="color:#ae81ff">123</span><span style="color:#f92672">/</span><span style="color:#a6e22e">posts</span>
+</span></span></code></pre></div><hr>
+<h2 id="2-graphql-linh-hoạt-hơn">2. GraphQL: Linh Hoạt Hơn</h2>
+<p>GraphQL cho phép client tự định nghĩa dữ liệu cần lấy thông qua <strong>query language</strong>.</p>
+<h3 id="ưu-điểm-1">Ưu điểm</h3>
+<ul>
+<li><strong>Đúng dữ liệu cần thiết:</strong> Client tự chọn fields cần lấy.</li>
+<li><strong>Single endpoint:</strong> Chỉ cần 1 endpoint <code>/graphql</code> cho tất cả queries.</li>
+<li><strong>Strong typing:</strong> Schema định nghĩa rõ ràng cấu trúc dữ liệu.</li>
+</ul>
+<h3 id="nhược-điểm-1">Nhược điểm</h3>
+<ul>
+<li><strong>Phức tạp hơn:</strong> Learning curve cao, cần thêm GraphQL server (Apollo, Relay&hellip;).</li>
+<li><strong>Caching khó:</strong> Không thể dùng HTTP cache truyền thống.</li>
+<li><strong>N+1 problem:</strong> Nếu không tối ưu, có thể query database quá nhiều lần.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-graphql" data-lang="graphql"><span style="display:flex;"><span><span style="color:#75715e"># GraphQL: 1 request lấy cả user + posts</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">query</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user</span>(id: <span style="color:#e6db74">&#34;123&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>    email
+</span></span><span style="display:flex;"><span>    posts {
+</span></span><span style="display:flex;"><span>      title
+</span></span><span style="display:flex;"><span>      createdAt
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="3-nên-dùng-gì-khi-nào">3. Nên Dùng Gì Khi Nào?</h2>
+<h3 id="dùng-rest-khi">Dùng REST khi:</h3>
+<ul>
+<li>Dự án nhỏ, đơn giản.</li>
+<li>Cần tận dụng HTTP caching.</li>
+<li>Team chưa quen GraphQL.</li>
+</ul>
+<h3 id="dùng-graphql-khi">Dùng GraphQL khi:</h3>
+<ul>
+<li>Mobile app với bandwidth hạn chế (cần tối ưu payload).</li>
+<li>Frontend cần linh hoạt fetch dữ liệu.</li>
+<li>Microservices architecture (GraphQL làm API Gateway).</li>
+</ul>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Không có giải pháp nào &ldquo;tốt nhất&rdquo;, chỉ có giải pháp &ldquo;phù hợp nhất&rdquo;. REST vẫn là lựa chọn an toàn cho đa số dự án, còn GraphQL tỏa sáng khi bạn cần sự linh hoạt và kiểm soát chặt chẽ dữ liệu truyền tải.</p>
+
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-content">
+            <p class="footer-copyright">
+                © 2025 Taf1 IT BLOG. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/Tafi2706" target="_blank" rel="noopener noreferrer"
+                    class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/nguyen.thanhtai.623001/" target="_blank"
+                    rel="noopener noreferrer" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="mailto:nguyenthanhtai270604@gmail.com" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script src="/js/search.js"></script>
+</body>
+</html>

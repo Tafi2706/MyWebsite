@@ -1,8 +1,123 @@
-<!doctype html><html lang=vi><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Blog Lập Trình Mạng"><meta name=author content="Nguyễn Thành Tài"><title>Hiểu về Bắt Tay TCP/IP (TCP/IP Handshake) | Taf1 IT BLOG</title><link rel=stylesheet href=/css/style.css></head><body><nav class=navbar><div class="container navbar-container"><a href=/ class=navbar-logo><img src=/img/logo.jpg alt=Logo class=logo-image>
-<span class=navbar-title>Taf1 IT BLOG</span>
-</a><button class=mobile-menu-toggle id=mobile-menu-toggle aria-label="Toggle menu">
-<span></span>
-<span></span>
-<span></span></button><ul class=navbar-menu id=navbar-menu><li><a href=/>Home</a></li><li><a href=/about/>About</a></li><li><a href=/portfolio/>Portfolio</a></li><li><a href=/contact/>Contact</a></li></ul></div></nav><script>document.getElementById("mobile-menu-toggle").addEventListener("click",function(){document.getElementById("navbar-menu").classList.toggle("active")})</script><main><div class=content-page><div class=container><h1 id=giới-thiệu>Giới thiệu</h1><p>TCP/IP là một trong những giao thức quan trọng nhất của Internet hiện đại. Nó đảm bảo rằng dữ liệu được truyền một cách đáng tin cậy giữa các thiết bị trên mạng. Một trong những cơ chế cốt lõi của TCP là <strong>quy trình bắt tay ba bước (Three-Way Handshake)</strong>, giúp thiết lập kết nối trước khi truyền dữ liệu.</p><h2 id=quy-trình-bắt-tay-ba-bước>Quy trình Bắt Tay Ba Bước</h2><h3 id=bước-1-syn-synchronize>Bước 1: SYN (Synchronize)</h3><p>Client khởi tạo kết nối bằng cách gửi một gói <strong>SYN</strong> đến server. Gói này chứa số thứ tự ban đầu (Initial Sequence Number – ISN) để đồng bộ hóa việc truyền dữ liệu.</p><p><strong>Vai trò:</strong></p><ul><li>Yêu cầu server thiết lập kết nối</li><li>Khởi tạo số thứ tự gói tin</li></ul><h3 id=bước-2-syn-ack-synchronize-acknowledge>Bước 2: SYN-ACK (Synchronize-Acknowledge)</h3><p>Khi nhận được gói SYN, server phản hồi bằng gói <strong>SYN-ACK</strong>. Gói này bao gồm:</p><ul><li><strong>ACK:</strong> Xác nhận đã nhận SYN từ client</li><li><strong>SYN:</strong> Server gửi số thứ tự riêng của mình</li></ul><p><strong>Vai trò:</strong></p><ul><li>Xác nhận yêu cầu kết nối từ client</li><li>Cung cấp số thứ tự cho phía server</li></ul><h3 id=bước-3-ack-acknowledge>Bước 3: ACK (Acknowledge)</h3><p>Client gửi gói <strong>ACK</strong> cuối cùng để xác nhận đã nhận được SYN-ACK từ server. Sau bước này, kết nối TCP chính thức được thiết lập và cả hai bên có thể bắt đầu truyền dữ liệu.</p><p><strong>Vai trò:</strong></p><ul><li>Hoàn tất quy trình bắt tay</li><li>Xác nhận rằng kết nối đã sẵn sàng</li></ul><h2 id=tại-sao-cần-quy-trình-ba-bước>Tại sao cần quy trình ba bước?</h2><p>Quy trình bắt tay ba bước đảm bảo:</p><ol><li><strong>Đồng bộ hóa số thứ tự:</strong> Cả client và server đều biết số thứ tự ban đầu của nhau</li><li><strong>Xác nhận khả năng kết nối:</strong> Đảm bảo cả hai bên đều sẵn sàng giao tiếp</li><li><strong>Ngăn chặn kết nối cũ hoặc trùng lặp:</strong> Tránh nhầm lẫn với các phiên kết nối trước đó</li></ol><h2 id=kết-luận>Kết luận</h2><p>Quy trình bắt tay TCP/IP là nền tảng của giao tiếp mạng đáng tin cậy. Hiểu rõ cơ chế này giúp bạn nắm vững cách các ứng dụng mạng hoạt động và tối ưu hóa hiệu suất truyền dữ liệu. Đây là kiến thức thiết yếu cho bất kỳ kỹ sư mạng hay lập trình viên backend nào.</p></div></div></main><footer class=footer><div class="container footer-container"><div class=footer-content><p class=footer-copyright>© 2025 Taf1 IT BLOG. All rights reserved.</p><div class=footer-socials><a href=https://github.com/Tafi2706 target=_blank rel="noopener noreferrer" class=footer-social-link><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374.0.0 5.373.0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931.0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176.0.0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221.0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-</a><a href="https://www.facebook.com/profile.php?id=100012849085147" target=_blank rel="noopener noreferrer" class=footer-social-link><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596.0 9 1.583 9 4.615V8z"/></svg>
-</a><a href=mailto:nguyenthanhtai270604@gmail.com class=footer-social-link><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24V3H0zm6.623 7.929L2 16.641V7.183l4.623 3.746zM2.482 5h19.035L12 12.713 2.482 5zm5.694 7.188L12 15.287l3.83-3.104L21.442 19H2.663l5.513-6.812zm9.208-1.264L22 7.183v9.348l-4.616-5.607z"/></svg></a></div></div></div></footer><script src=/js/search.js></script></body></html>
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Lập Trình Mạng">
+    <meta name="author" content="Nguyễn Thành Tài">
+    <title>Hiểu về Bắt Tay TCP/IP (TCP/IP Handshake) | Taf1 IT BLOG</title>
+   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container navbar-container">
+        <a href="/" class="navbar-logo">
+            <img src="/img/logo.jpg" alt="Logo" class="logo-image">
+            <span class="navbar-title">Taf1 IT BLOG</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about/" class="">About</a></li>
+            <li><a href="/portfolio/" class="">Portfolio</a></li>
+            <li><a href="/contact/" class="">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('active');
+    });
+</script>
+    
+    <main>
+        
+<div class="content-page">
+    <div class="container">
+        <h1 id="giới-thiệu">Giới thiệu</h1>
+<p>TCP/IP là một trong những giao thức quan trọng nhất của Internet hiện đại. Nó đảm bảo rằng dữ liệu được truyền một cách đáng tin cậy giữa các thiết bị trên mạng. Một trong những cơ chế cốt lõi của TCP là <strong>quy trình bắt tay ba bước (Three-Way Handshake)</strong>, giúp thiết lập kết nối trước khi truyền dữ liệu.</p>
+<h2 id="quy-trình-bắt-tay-ba-bước">Quy trình Bắt Tay Ba Bước</h2>
+<h3 id="bước-1-syn-synchronize">Bước 1: SYN (Synchronize)</h3>
+<p>Client khởi tạo kết nối bằng cách gửi một gói <strong>SYN</strong> đến server. Gói này chứa số thứ tự ban đầu (Initial Sequence Number – ISN) để đồng bộ hóa việc truyền dữ liệu.</p>
+<p><strong>Vai trò:</strong></p>
+<ul>
+<li>Yêu cầu server thiết lập kết nối</li>
+<li>Khởi tạo số thứ tự gói tin</li>
+</ul>
+<h3 id="bước-2-syn-ack-synchronize-acknowledge">Bước 2: SYN-ACK (Synchronize-Acknowledge)</h3>
+<p>Khi nhận được gói SYN, server phản hồi bằng gói <strong>SYN-ACK</strong>. Gói này bao gồm:</p>
+<ul>
+<li><strong>ACK:</strong> Xác nhận đã nhận SYN từ client</li>
+<li><strong>SYN:</strong> Server gửi số thứ tự riêng của mình</li>
+</ul>
+<p><strong>Vai trò:</strong></p>
+<ul>
+<li>Xác nhận yêu cầu kết nối từ client</li>
+<li>Cung cấp số thứ tự cho phía server</li>
+</ul>
+<h3 id="bước-3-ack-acknowledge">Bước 3: ACK (Acknowledge)</h3>
+<p>Client gửi gói <strong>ACK</strong> cuối cùng để xác nhận đã nhận được SYN-ACK từ server. Sau bước này, kết nối TCP chính thức được thiết lập và cả hai bên có thể bắt đầu truyền dữ liệu.</p>
+<p><strong>Vai trò:</strong></p>
+<ul>
+<li>Hoàn tất quy trình bắt tay</li>
+<li>Xác nhận rằng kết nối đã sẵn sàng</li>
+</ul>
+<h2 id="tại-sao-cần-quy-trình-ba-bước">Tại sao cần quy trình ba bước?</h2>
+<p>Quy trình bắt tay ba bước đảm bảo:</p>
+<ol>
+<li><strong>Đồng bộ hóa số thứ tự:</strong> Cả client và server đều biết số thứ tự ban đầu của nhau</li>
+<li><strong>Xác nhận khả năng kết nối:</strong> Đảm bảo cả hai bên đều sẵn sàng giao tiếp</li>
+<li><strong>Ngăn chặn kết nối cũ hoặc trùng lặp:</strong> Tránh nhầm lẫn với các phiên kết nối trước đó</li>
+</ol>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Quy trình bắt tay TCP/IP là nền tảng của giao tiếp mạng đáng tin cậy. Hiểu rõ cơ chế này giúp bạn nắm vững cách các ứng dụng mạng hoạt động và tối ưu hóa hiệu suất truyền dữ liệu. Đây là kiến thức thiết yếu cho bất kỳ kỹ sư mạng hay lập trình viên backend nào.</p>
+
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-content">
+            <p class="footer-copyright">
+                © 2025 Taf1 IT BLOG. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/Tafi2706" target="_blank" rel="noopener noreferrer"
+                    class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/nguyen.thanhtai.623001/" target="_blank"
+                    rel="noopener noreferrer" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="mailto:nguyenthanhtai270604@gmail.com" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script src="/js/search.js"></script>
+</body>
+</html>

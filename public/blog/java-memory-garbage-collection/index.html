@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Lập Trình Mạng">
+    <meta name="author" content="Nguyễn Thành Tài">
+    <title>Java: Quản Lý Bộ Nhớ và Garbage Collection | Taf1 IT BLOG</title>
+   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container navbar-container">
+        <a href="/" class="navbar-logo">
+            <img src="/img/logo.jpg" alt="Logo" class="logo-image">
+            <span class="navbar-title">Taf1 IT BLOG</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about/" class="">About</a></li>
+            <li><a href="/portfolio/" class="">Portfolio</a></li>
+            <li><a href="/contact/" class="">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('active');
+    });
+</script>
+    
+    <main>
+        
+<div class="content-page">
+    <div class="container">
+        <h1 id="java-memory-management--garbage-collection">Java Memory Management &amp; Garbage Collection</h1>
+<p>Khác với C++, Java giải phóng lập trình viên khỏi gánh nặng quản lý bộ nhớ thủ công nhờ vào cơ chế <strong>Garbage Collection (GC)</strong>. Tuy nhiên, hiểu rõ cách JVM sử dụng bộ nhớ là điều kiện tiên quyết để viết ứng dụng hiệu năng cao và tránh lỗi <code>OutOfMemoryError</code>.</p>
+<h2 id="1-cấu-trúc-bộ-nhớ-jvm">1. Cấu Trúc Bộ Nhớ JVM</h2>
+<p>Bộ nhớ trong Java chủ yếu được chia thành hai phần chính: <strong>Stack</strong> và <strong>Heap</strong>.</p>
+<h3 id="stack-memory-ngăn-xếp">Stack Memory (Ngăn xếp)</h3>
+<ul>
+<li><strong>Chức năng:</strong> Lưu trữ các biến cục bộ (local variables) và lời gọi hàm (method calls).</li>
+<li><strong>Đặc điểm:</strong> Truy xuất cực nhanh, dữ liệu tự động bị xóa khi block code kết thúc (LIFO - Last In First Out).</li>
+<li><strong>Lưu trữ:</strong> Primitive types (int, boolean&hellip;) và tham chiếu (reference) đến đối tượng trong Heap.</li>
+</ul>
+<h3 id="heap-memory-đống">Heap Memory (Đống)</h3>
+<ul>
+<li><strong>Chức năng:</strong> Lưu trữ tất cả các <strong>Object</strong> (đối tượng) được tạo ra bằng từ khóa <code>new</code>.</li>
+<li><strong>Đặc điểm:</strong> Được chia sẻ giữa các luồng (Thread-safe issues), quản lý phức tạp hơn Stack.</li>
+<li><strong>Cấu trúc Heap:</strong>
+<ul>
+<li><strong>Young Generation:</strong> Nơi chứa các object mới sinh ra.</li>
+<li><strong>Old Generation:</strong> Nơi chứa các object tồn tại lâu đời.</li>
+<li><strong>Metaspace:</strong> Lưu trữ metadata của class (từ Java 8 trở đi).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-garbage-collection-gc-hoạt-động-như-thế-nào">2. Garbage Collection (GC) Hoạt Động Như Thế Nào?</h2>
+<p>GC là tiến trình chạy ngầm (Daemon Thread) để tìm và xóa các object không còn được tham chiếu đến.</p>
+<h3 id="quy-trình-cơ-bản-mark-and-sweep">Quy trình cơ bản (Mark and Sweep)</h3>
+<ol>
+<li><strong>Mark (Đánh dấu):</strong> GC duyệt qua cây object, đánh dấu những object nào đang được sử dụng (Reachable).</li>
+<li><strong>Sweep (Dọn dẹp):</strong> Xóa các object không được đánh dấu.</li>
+<li><strong>Compact (Sắp xếp):</strong> (Tùy chọn) Dồn các object còn lại về một phía để chống phân mảnh bộ nhớ.</li>
+</ol>
+<h3 id="các-thuật-toán-gc-phổ-biến">Các thuật toán GC phổ biến</h3>
+<ul>
+<li><strong>Serial GC:</strong> Dùng cho ứng dụng nhỏ, đơn luồng.</li>
+<li><strong>Parallel GC:</strong> Dùng nhiều luồng để dọn dẹp (Mặc định trong nhiều version Java cũ).</li>
+<li><strong>G1 GC (Garbage First):</strong> Tối ưu cho Heap lớn, chia Heap thành các vùng nhỏ (Region) để dọn dẹp song song. Mặc định từ Java 9.</li>
+</ul>
+<hr>
+<h2 id="3-các-vấn-đề-thường-gặp">3. Các Vấn Đề Thường Gặp</h2>
+<h3 id="memory-leak-rò-rỉ-bộ-nhớ">Memory Leak (Rò rỉ bộ nhớ)</h3>
+<p>Dù có GC, Java vẫn có thể bị memory leak nếu bạn giữ tham chiếu đến object không còn dùng (ví dụ: quên đóng kết nối DB, static list lưu trữ vô hạn).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Ví dụ về Memory Leak</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BadCache</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// List này sẽ lớn mãi mãi vì là static</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> List<span style="color:#f92672">&lt;</span>Object<span style="color:#f92672">&gt;</span> cache <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>(); 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addData</span>(Object data) {
+</span></span><span style="display:flex;"><span>        cache.<span style="color:#a6e22e">add</span>(data);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="tuning-jvm">Tuning JVM</h3>
+<p>Để tối ưu, chúng ta thường cấu hình các tham số khởi chạy:</p>
+<ul>
+<li><code>-Xms</code>: Kích thước Heap khởi điểm.</li>
+<li><code>-Xmx</code>: Kích thước Heap tối đa.</li>
+</ul>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Hiểu sâu về Stack, Heap và GC giúp bạn không chỉ viết code chạy đúng mà còn chạy nhanh và ổn định, đặc biệt là trong các hệ thống Backend chịu tải cao.</p>
+
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-content">
+            <p class="footer-copyright">
+                © 2025 Taf1 IT BLOG. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/Tafi2706" target="_blank" rel="noopener noreferrer"
+                    class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/nguyen.thanhtai.623001/" target="_blank"
+                    rel="noopener noreferrer" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="mailto:nguyenthanhtai270604@gmail.com" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script src="/js/search.js"></script>
+</body>
+</html>

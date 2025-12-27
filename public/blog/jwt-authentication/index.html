@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Lập Trình Mạng">
+    <meta name="author" content="Nguyễn Thành Tài">
+    <title>JWT Authentication: Bảo Mật API Hiện Đại | Taf1 IT BLOG</title>
+   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container navbar-container">
+        <a href="/" class="navbar-logo">
+            <img src="/img/logo.jpg" alt="Logo" class="logo-image">
+            <span class="navbar-title">Taf1 IT BLOG</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about/" class="">About</a></li>
+            <li><a href="/portfolio/" class="">Portfolio</a></li>
+            <li><a href="/contact/" class="">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('active');
+    });
+</script>
+    
+    <main>
+        
+<div class="content-page">
+    <div class="container">
+        <h1 id="jwt-authentication-stateless-security-cho-api">JWT Authentication: Stateless Security Cho API</h1>
+<p>Khi xây dựng RESTful API, một trong những thách thức lớn nhất là <strong>authentication</strong> (xác thực người dùng). JWT (JSON Web Token) đã trở thành giải pháp phổ biến nhất nhờ tính <strong>stateless</strong> và khả năng mở rộng tốt.</p>
+<h2 id="1-jwt-hoạt-động-như-thế-nào">1. JWT Hoạt Động Như Thế Nào?</h2>
+<p>JWT là một chuỗi string được mã hóa gồm 3 phần:</p>
+<pre tabindex="0"><code>header.payload.signature
+</code></pre><h3 id="header">Header</h3>
+<p>Chứa thông tin về thuật toán mã hóa (thường là HS256 hoặc RS256).</p>
+<h3 id="payload">Payload</h3>
+<p>Chứa thông tin user (user_id, role, email&hellip;). <strong>Lưu ý:</strong> Payload không được mã hóa, chỉ base64-encoded!</p>
+<h3 id="signature">Signature</h3>
+<p>Chữ ký số để verify token không bị giả mạo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Tạo JWT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jwt</span>.<span style="color:#a6e22e">sign</span>(
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">user_id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">123</span>, <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;admin&#39;</span> },
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;SECRET_KEY&#39;</span>,
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">expiresIn</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;1h&#39;</span> }
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Verify JWT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">decoded</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jwt</span>.<span style="color:#a6e22e">verify</span>(<span style="color:#a6e22e">token</span>, <span style="color:#e6db74">&#39;SECRET_KEY&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">decoded</span>.<span style="color:#a6e22e">user_id</span>); <span style="color:#75715e">// 123
+</span></span></span></code></pre></div><hr>
+<h2 id="2-flow-authentication-chuẩn">2. Flow Authentication Chuẩn</h2>
+<h3 id="login">Login</h3>
+<ol>
+<li>User gửi username + password.</li>
+<li>Server verify credentials.</li>
+<li>Server tạo JWT và trả về cho client.</li>
+<li>Client lưu JWT vào <code>localStorage</code> hoặc <code>httpOnly cookie</code>.</li>
+</ol>
+<h3 id="gọi-api">Gọi API</h3>
+<ol>
+<li>Client gửi JWT trong header: <code>Authorization: Bearer &lt;token&gt;</code>.</li>
+<li>Server verify JWT.</li>
+<li>Nếu hợp lệ, xử lý request. Nếu không, trả về 401 Unauthorized.</li>
+</ol>
+<hr>
+<h2 id="3-các-lỗi-bảo-mật-thường-gặp">3. Các Lỗi Bảo Mật Thường Gặp</h2>
+<h3 id="lưu-secret-key-không-an-toàn">Lưu Secret Key Không An Toàn</h3>
+<p>❌ <strong>Sai:</strong> Hardcode secret trong code và push lên GitHub.
+✅ <strong>Đúng:</strong> Dùng environment variables (<code>process.env.JWT_SECRET</code>).</p>
+<h3 id="không-kiểm-tra-expiration">Không Kiểm Tra Expiration</h3>
+<p>❌ <strong>Sai:</strong> Token không có thời gian hết hạn, dùng mãi mãi.
+✅ <strong>Đúng:</strong> Đặt <code>expiresIn</code> ngắn (15-60 phút) + implement Refresh Token.</p>
+<h3 id="lưu-thông-tin-nhạy-cảm-trong-payload">Lưu Thông Tin Nhạy Cảm Trong Payload</h3>
+<p>❌ <strong>Sai:</strong> Lưu password, credit card vào payload (vì ai cũng decode được).
+✅ <strong>Đúng:</strong> Chỉ lưu thông tin định danh (user_id, role).</p>
+<h3 id="không-dùng-https">Không Dùng HTTPS</h3>
+<p>JWT gửi qua HTTP thuần sẽ bị đánh cắp dễ dàng (Man-in-the-Middle Attack).
+✅ <strong>Bắt buộc:</strong> Chỉ dùng JWT qua HTTPS.</p>
+<hr>
+<h2 id="4-access-token-vs-refresh-token">4. Access Token vs Refresh Token</h2>
+<p>Để cân bằng giữa bảo mật và UX, pattern phổ biến là:</p>
+<ul>
+<li><strong>Access Token:</strong> Thời gian ngắn (15 phút), dùng để gọi API.</li>
+<li><strong>Refresh Token:</strong> Thời gian dài (7-30 ngày), dùng để lấy Access Token mới.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Khi Access Token hết hạn
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">refresh</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Body</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">refreshToken</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;xyz...&#34;</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Response: Access Token mới
+</span></span></span></code></pre></div><h2 id="kết-luận">Kết Luận</h2>
+<p>JWT là công cụ mạnh mẽ nhưng cần hiểu rõ để tránh lỗ hổng bảo mật. Luôn nhớ: <strong>Security is not an afterthought, it&rsquo;s a foundation.</strong></p>
+
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-content">
+            <p class="footer-copyright">
+                © 2025 Taf1 IT BLOG. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/Tafi2706" target="_blank" rel="noopener noreferrer"
+                    class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/nguyen.thanhtai.623001/" target="_blank"
+                    rel="noopener noreferrer" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="mailto:nguyenthanhtai270604@gmail.com" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script src="/js/search.js"></script>
+</body>
+</html>

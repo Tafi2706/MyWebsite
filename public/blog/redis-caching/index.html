@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Lập Trình Mạng">
+    <meta name="author" content="Nguyễn Thành Tài">
+    <title>Redis Caching Strategy: Tăng Hiệu Năng Backend | Taf1 IT BLOG</title>
+   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container navbar-container">
+        <a href="/" class="navbar-logo">
+            <img src="/img/logo.jpg" alt="Logo" class="logo-image">
+            <span class="navbar-title">Taf1 IT BLOG</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navbar-menu" id="navbar-menu">
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about/" class="">About</a></li>
+            <li><a href="/portfolio/" class="">Portfolio</a></li>
+            <li><a href="/contact/" class="">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('active');
+    });
+</script>
+    
+    <main>
+        
+<div class="content-page">
+    <div class="container">
+        <h1 id="redis-caching-tăng-tốc-ứng-dụng-10-100-lần">Redis Caching: Tăng Tốc Ứng Dụng 10-100 Lần</h1>
+<p>Khi database trở thành bottleneck của hệ thống, <strong>caching</strong> là giải pháp đầu tiên bạn nên nghĩ đến. Redis là in-memory data store phổ biến nhất cho việc này, giúp giảm database load và tăng response time đáng kể.</p>
+<h2 id="1-tại-sao-cần-redis">1. Tại Sao Cần Redis?</h2>
+<h3 id="vấn-đề-thực-tế">Vấn Đề Thực Tế</h3>
+<p>Mỗi lần user truy cập profile, ứng dụng query database:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">123</span>;
+</span></span></code></pre></div><p>Nếu có 10,000 requests/giây, database phải xử lý 10,000 queries cho <strong>cùng một dữ liệu không đổi</strong>. Lãng phí!</p>
+<h3 id="giải-pháp-cache-với-redis">Giải Pháp: Cache Với Redis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Lần đầu: Lấy từ DB + lưu vào Redis
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">query</span>(<span style="color:#e6db74">&#39;SELECT * FROM users WHERE id = 123&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;user:123&#39;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">user</span>), <span style="color:#e6db74">&#39;EX&#39;</span>, <span style="color:#ae81ff">3600</span>); <span style="color:#75715e">// Cache 1 giờ
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lần sau: Lấy trực tiếp từ Redis (cực nhanh)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cachedUser</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;user:123&#39;</span>);
+</span></span></code></pre></div><hr>
+<h2 id="2-các-caching-pattern">2. Các Caching Pattern</h2>
+<h3 id="cache-aside-lazy-loading">Cache-Aside (Lazy Loading)</h3>
+<p>Application tự quản lý cache. <strong>Phổ biến nhất</strong>.</p>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>Check Redis trước.</li>
+<li>Nếu miss, query DB rồi lưu vào Redis.</li>
+<li>Nếu hit, trả về luôn.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getUser</span>(<span style="color:#a6e22e">userId</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cached</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">`user:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">userId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">cached</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">cached</span>);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">findById</span>(<span style="color:#a6e22e">userId</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">`user:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">userId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">user</span>), <span style="color:#e6db74">&#39;EX&#39;</span>, <span style="color:#ae81ff">3600</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">user</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="write-through">Write-Through</h3>
+<p>Mỗi lần write database, đồng thời write Redis.</p>
+<p><strong>Ưu điểm:</strong> Cache luôn đồng bộ.
+<strong>Nhược điểm:</strong> Tốn tài nguyên cho data ít được đọc.</p>
+<h3 id="write-behind-write-back">Write-Behind (Write-Back)</h3>
+<p>Write vào Redis trước, rồi async write vào DB sau.</p>
+<p><strong>Ưu điểm:</strong> Write cực nhanh.
+<strong>Nhược điểm:</strong> Rủi ro mất dữ liệu nếu Redis crash.</p>
+<hr>
+<h2 id="3-cache-invalidation-vấn-đề-khó-nhất">3. Cache Invalidation (Vấn Đề Khó Nhất)</h2>
+<blockquote>
+<p>&ldquo;There are only two hard things in Computer Science: cache invalidation and naming things.&rdquo; – Phil Karlton</p>
+</blockquote>
+<p>Khi data trong DB thay đổi, làm sao để Redis biết và xóa cache cũ?</p>
+<h3 id="ttl-time-to-live">TTL (Time To Live)</h3>
+<p>Đơn giản nhất: Đặt thời gian sống cho cache.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;user:123&#39;</span>, <span style="color:#a6e22e">data</span>, <span style="color:#e6db74">&#39;EX&#39;</span>, <span style="color:#ae81ff">300</span>); <span style="color:#75715e">// Hết hạn sau 5 phút
+</span></span></span></code></pre></div><h3 id="manual-invalidation">Manual Invalidation</h3>
+<p>Khi update DB, xóa cache tương ứng.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">updateUser</span>(<span style="color:#a6e22e">userId</span>, <span style="color:#a6e22e">newData</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">userId</span>, <span style="color:#a6e22e">newData</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">del</span>(<span style="color:#e6db74">`user:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">userId</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>); <span style="color:#75715e">// Xóa cache
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><hr>
+<h2 id="4-redis-không-chỉ-là-cache">4. Redis Không Chỉ Là Cache</h2>
+<p>Redis còn hỗ trợ nhiều cấu trúc dữ liệu khác:</p>
+<ul>
+<li><strong>Set:</strong> Lưu danh sách unique (ví dụ: online users).</li>
+<li><strong>Sorted Set:</strong> Leaderboard, ranking.</li>
+<li><strong>Pub/Sub:</strong> Real-time messaging.</li>
+<li><strong>Stream:</strong> Event sourcing.</li>
+</ul>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Redis là &ldquo;Swiss Army Knife&rdquo; của backend engineering. Dùng đúng cách, nó có thể giúp bạn scale ứng dụng từ 1,000 lên 100,000 users mà không cần optimize database quá nhiều.</p>
+
+    </div>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-content">
+            <p class="footer-copyright">
+                © 2025 Taf1 IT BLOG. All rights reserved.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://github.com/Tafi2706" target="_blank" rel="noopener noreferrer"
+                    class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/nguyen.thanhtai.623001/" target="_blank"
+                    rel="noopener noreferrer" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="mailto:nguyenthanhtai270604@gmail.com" class="footer-social-link">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script src="/js/search.js"></script>
+</body>
+</html>
