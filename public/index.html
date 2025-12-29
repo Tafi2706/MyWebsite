@@ -26,6 +26,8 @@
 
         <ul class="navbar-menu" id="navbar-menu">
             <li><a href="/" class="active">Home</a></li>
+            <li><a href="/blog/" class="">Blog</a></li>
+            <li><a href="/cv/" class="">CV</a></li>
             <li><a href="/about/" class="">About</a></li>
             <li><a href="/portfolio/" class="">Portfolio</a></li>
             <li><a href="/contact/" class="">Contact</a></li>
@@ -41,164 +43,18 @@
     
     <main>
         
-<div class="home-page">
-    <div class="container">
-        <div class="home-hero">
-            <h1 class="home-title">Blog Lập Trình Mạng</h1>
-            <p class="home-subtitle">
-                Khám phá các cơ chế và khía cạnh bảo mật trong lập trình mạng
+<div class="landing-page">
+    <div class="landing-container">
+        <div class="landing-content">
+            <div class="avatar-container">
+                <img src="/img/avatar.jpg" alt="Nguyễn Thành Tài" class="landing-avatar">
+            </div>
+            <h1 class="landing-name">Nguyễn Thành Tài</h1>
+            <p class="landing-slogan">
+                <span class="typewriter">Let my code speak for itself.</span>
+                <span class="cursor">|</span>
             </p>
         </div>
-
-        <div class="search-bar-container">
-            <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Tìm kiếm bài viết..." class="search-input">
-                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-            </div>
-        </div>
-
-        <section class="home-blog-section">
-            <h2 class="section-title">Bài Viết Mới Nhất</h2>
-            <div class="blog-grid" id="blog-grid">
-                
-                <article class="blog-card" data-title="Kết Hợp Networking &amp; JS: Cách Web Hoạt Động" data-excerpt="Tổng hợp kiến thức: Khi bạn gõ URL và bấm Enter, JavaScript và các giao thức mạng (DNS, TCP, HTTP) phối hợp với nhau như thế nào?">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/how-web-works-network-js/">Kết Hợp Networking &amp; JS: Cách Web Hoạt Động</a>
-                        </h3>
-                        <p class="blog-card-excerpt">Tổng hợp kiến thức: Khi bạn gõ URL và bấm Enter, JavaScript và các giao thức mạng (DNS, TCP, HTTP) phối hợp với nhau như thế nào?</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">15 tháng 4, 2024</time>
-                            <a href="/blog/how-web-works-network-js/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-title="Bất Đồng Bộ: Promises và Async/Await" data-excerpt="Xử lý các tác vụ tốn thời gian (API call, Timer) mà không làm treo ứng dụng. Từ Callback Hell đến giải pháp hiện đại Async/Await.">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/js-async-await/">Bất Đồng Bộ: Promises và Async/Await</a>
-                        </h3>
-                        <p class="blog-card-excerpt">Xử lý các tác vụ tốn thời gian (API call, Timer) mà không làm treo ứng dụng. Từ Callback Hell đến giải pháp hiện đại Async/Await.</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">10 tháng 4, 2024</time>
-                            <a href="/blog/js-async-await/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-title="Arrow Functions và Các Tính Năng Hiện Đại" data-excerpt="Cú pháp Arrow Function ngắn gọn, Template Literals, Destructuring và Spread Operator - Những công cụ mạnh mẽ của ES6&#43;.">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/js-modern-features/">Arrow Functions và Các Tính Năng Hiện Đại</a>
-                        </h3>
-                        <p class="blog-card-excerpt">Cú pháp Arrow Function ngắn gọn, Template Literals, Destructuring và Spread Operator - Những công cụ mạnh mẽ của ES6&#43;.</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">5 tháng 4, 2024</time>
-                            <a href="/blog/js-modern-features/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-title="JS Essentials 2: Hướng Đối Tượng (OOP)" data-excerpt="Chuyển từ lập trình thủ tục sang hướng đối tượng. Tìm hiểu về Object, Class, Constructor và từ khóa &#39;this&#39; trong JavaScript.">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/js-oop-basics/">JS Essentials 2: Hướng Đối Tượng (OOP)</a>
-                        </h3>
-                        <p class="blog-card-excerpt">Chuyển từ lập trình thủ tục sang hướng đối tượng. Tìm hiểu về Object, Class, Constructor và từ khóa &#39;this&#39; trong JavaScript.</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">1 tháng 4, 2024</time>
-                            <a href="/blog/js-oop-basics/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-title="Hàm (Functions) và Xử Lý Lỗi trong JS" data-excerpt="Cách khai báo hàm, tham số, giá trị trả về. Sử dụng khối try-catch-finally để xử lý ngoại lệ (Exception Handling).">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/js-functions-error-handling/">Hàm (Functions) và Xử Lý Lỗi trong JS</a>
-                        </h3>
-                        <p class="blog-card-excerpt">Cách khai báo hàm, tham số, giá trị trả về. Sử dụng khối try-catch-finally để xử lý ngoại lệ (Exception Handling).</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">10 tháng 3, 2024</time>
-                            <a href="/blog/js-functions-error-handling/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-title="Control Flow: Vòng Lặp và Điều Kiện trong JS" data-excerpt="Làm chủ luồng chạy của ứng dụng với if-else, switch-case và các loại vòng lặp for, while, do-while.">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/js-control-flow/">Control Flow: Vòng Lặp và Điều Kiện trong JS</a>
-                        </h3>
-                        <p class="blog-card-excerpt">Làm chủ luồng chạy của ứng dụng với if-else, switch-case và các loại vòng lặp for, while, do-while.</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">5 tháng 3, 2024</time>
-                            <a href="/blog/js-control-flow/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-title="JS Essentials 1: Biến, Kiểu Dữ Liệu và Strict Mode" data-excerpt="Khởi đầu với JavaScript: Sự khác biệt giữa let, const, var và các kiểu dữ liệu nguyên thủy (Primitive Types). Tại sao nên dùng Strict Mode?">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/js-variables-types/">JS Essentials 1: Biến, Kiểu Dữ Liệu và Strict Mode</a>
-                        </h3>
-                        <p class="blog-card-excerpt">Khởi đầu với JavaScript: Sự khác biệt giữa let, const, var và các kiểu dữ liệu nguyên thủy (Primitive Types). Tại sao nên dùng Strict Mode?</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">1 tháng 3, 2024</time>
-                            <a href="/blog/js-variables-types/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-title="TCP vs UDP: Độ Tin Cậy hay Tốc Độ?" data-excerpt="So sánh hai giao thức phổ biến nhất tầng Transport. Khi nào dùng TCP (Web, Email) và khi nào dùng UDP (Streaming, Game).">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/tcp-vs-udp/">TCP vs UDP: Độ Tin Cậy hay Tốc Độ?</a>
-                        </h3>
-                        <p class="blog-card-excerpt">So sánh hai giao thức phổ biến nhất tầng Transport. Khi nào dùng TCP (Web, Email) và khi nào dùng UDP (Streaming, Game).</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">10 tháng 2, 2024</time>
-                            <a href="/blog/tcp-vs-udp/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-title="Địa Chỉ IP và Subnetting: Định Danh Trên Mạng" data-excerpt="Phân biệt IPv4 và IPv6. Tìm hiểu cấu trúc địa chỉ IP, Subnet Mask và sự khác biệt giữa Public IP và Private IP.">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/ip-addressing-basics/">Địa Chỉ IP và Subnetting: Định Danh Trên Mạng</a>
-                        </h3>
-                        <p class="blog-card-excerpt">Phân biệt IPv4 và IPv6. Tìm hiểu cấu trúc địa chỉ IP, Subnet Mask và sự khác biệt giữa Public IP và Private IP.</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">5 tháng 2, 2024</time>
-                            <a href="/blog/ip-addressing-basics/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="blog-card" data-title="Mô Hình OSI và TCP/IP: Ngôn Ngữ Của Internet" data-excerpt="Tổng quan về 7 tầng trong mô hình OSI và 4 tầng TCP/IP. Hiểu cách dữ liệu được đóng gói (Encapsulation) để truyền tải qua mạng.">
-                    <div class="blog-card-content">
-                        <h3 class="blog-card-title">
-                            <a href="/blog/osi-tcp-ip-models/">Mô Hình OSI và TCP/IP: Ngôn Ngữ Của Internet</a>
-                        </h3>
-                        <p class="blog-card-excerpt">Tổng quan về 7 tầng trong mô hình OSI và 4 tầng TCP/IP. Hiểu cách dữ liệu được đóng gói (Encapsulation) để truyền tải qua mạng.</p>
-                        <div class="blog-card-meta">
-                            <time class="blog-card-date">1 tháng 2, 2024</time>
-                            <a href="/blog/osi-tcp-ip-models/" class="blog-card-link">Đọc Thêm →</a>
-                        </div>
-                    </div>
-                </article>
-                
-            </div>
-            <div id="no-results" class="no-results" style="display: none;">
-                <p>Không tìm thấy bài viết nào phù hợp.</p>
-            </div>
-        </section>
     </div>
 </div>
 

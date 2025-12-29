@@ -3360,3 +3360,337 @@ label {
         grid-template-columns: 1fr;
     }
 }
+
+/* ======================================
+   Landing Page Styles
+   ====================================== */
+.landing-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) 0;
+}
+
+.landing-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 var(--spacing-lg);
+}
+
+.landing-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+}
+
+.avatar-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.landing-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 4px solid #ffffff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+        0 0 50px rgba(255, 255, 255, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-base);
+    animation: avatarGlow 2s ease-in-out infinite;
+}
+
+.landing-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.8),
+        0 0 70px rgba(255, 255, 255, 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes avatarGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+            0 0 50px rgba(255, 255, 255, 0.4),
+            inset 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.8),
+            0 0 60px rgba(255, 255, 255, 0.5),
+            inset 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.landing-name {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.landing-slogan {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: "Fira Code", "Courier New", "Consolas", monospace;
+    font-weight: 700;
+    color: #ffffff;
+    max-width: 900px;
+    line-height: 1.5;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+    display: inline-block;
+}
+
+.typewriter {
+    display: inline-flex;
+    /* Changed from inline-block to inline-flex to align cursor */
+    overflow: hidden;
+    border-right: 0.15em solid transparent;
+    white-space: nowrap;
+    animation: typing 3.5s steps(30, end) 0.5s forwards,
+        textGlow 2s ease-in-out infinite;
+    width: 0;
+}
+
+.cursor {
+    color: #ffffff;
+    animation: blink 0.7s step-end infinite;
+    font-weight: 900;
+    margin-left: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes textGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 30px rgba(255, 255, 255, 0.4);
+    }
+
+    50% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1),
+            0 0 30px rgba(255, 255, 255, 0.8),
+            0 0 45px rgba(255, 255, 255, 0.6);
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-page {
+        min-height: calc(100vh - var(--navbar-height) - 100px);
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .avatar-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .landing-name {
+        font-size: var(--font-size-3xl);
+    }
+
+    .landing-slogan {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+        letter-spacing: 1px;
+    }
+
+    .typewriter {
+        animation: typing 4s steps(30, end) 0.5s forwards,
+            textGlow 2s ease-in-out infinite;
+    }
+}
+
+/* ======================================
+   CV Page Styles - Simple Image Display
+   ====================================== */
+.cv-page-simple {
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+    max-width: 100%;
+}
+
+.cv-title {
+    margin-bottom: var(--spacing-3xl);
+    font-size: var(--font-size-3xl);
+}
+
+.cv-display {
+    margin: 0 auto var(--spacing-2xl);
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+}
+
+.cv-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-md);
+}
+
+.cv-download-section {
+    margin-top: var(--spacing-2xl);
+    text-align: center;
+}
+
+.cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    color: #000000;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+}
+
+.cv-download-btn:hover {
+    background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent-primary));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: #000000;
+}
+
+.cv-download-btn:active {
+    transform: translateY(0);
+}
+
+.cv-download-btn svg {
+    stroke: #000000;
+}
+
+@media (max-width: 768px) {
+    .cv-page-simple {
+        padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    .cv-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .cv-download-btn {
+        width: calc(100% - 2rem);
+        font-size: var(--font-size-base);
+    }
+}
+
+/* ======================================
+   Certificates Section Styles
+   ====================================== */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.certificate-card {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.certificate-card:hover {
+    border-color: var(--color-accent-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.certificate-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+.certificate-card:hover .certificate-icon {
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+}
+
+.certificate-card:hover .certificate-icon svg {
+    stroke: #000000;
+}
+
+.certificate-icon svg {
+    stroke: var(--color-text-secondary);
+    transition: stroke var(--transition-base);
+}
+
+.certificate-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.certificate-desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+}

@@ -13,9 +13,11 @@
 
         <ul class="navbar-menu" id="navbar-menu">
             <li><a href="/" class="{{ if .IsHome }}active{{ end }}">Home</a></li>
-            <li><a href="/about/" class="{{ if eq .Section " about" }}active{{ end }}">About</a></li>
-            <li><a href="/portfolio/" class="{{ if eq .Section " portfolio" }}active{{ end }}">Portfolio</a></li>
-            <li><a href="/contact/" class="{{ if eq .Section " contact" }}active{{ end }}">Contact</a></li>
+            <li><a href="/blog/" class="{{ if eq .Section " blog" }}active{{ end }}">Blog</a></li>
+            <li><a href="/cv/" class="{{ if eq .RelPermalink " /cv/" }}active{{ end }}">CV</a></li>
+            <li><a href="/about/" class="{{ if eq .RelPermalink " /about/" }}active{{ end }}">About</a></li>
+            <li><a href="/portfolio/" class="{{ if eq .RelPermalink " /portfolio/" }}active{{ end }}">Portfolio</a></li>
+            <li><a href="/contact/" class="{{ if eq .RelPermalink " /contact/" }}active{{ end }}">Contact</a></li>
         </ul>
     </div>
 </nav>

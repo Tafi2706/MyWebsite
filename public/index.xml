@@ -87,6 +87,13 @@
     </item>
     <item>
       <title></title>
+      <link>http://localhost:1313/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cv/</guid>
+      <description>&lt;div class=&#34;cv-page-simple&#34;&gt;&#xD;&#xA;    &lt;h1 class=&#34;cv-title&#34;&gt;CV&lt;/h1&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div class=&#34;cv-display&#34;&gt;&#xD;&#xA;        &lt;img src=&#34;http://localhost:1313/img/cv-preview.jpg&#34; alt=&#34;CV Preview&#34; class=&#34;cv-image&#34;&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>http://localhost:1313/portfolio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/portfolio/</guid>
@@ -97,7 +104,7 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;div class=&#34;about-page&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;container&#34;&gt;&#xD;&#xA;        &lt;div class=&#34;about-card-unified&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;about-avatar-section&#34;&gt;&#xD;&#xA;                &lt;div class=&#34;about-avatar-wrapper&#34;&gt;&#xD;&#xA;                    &lt;img src=&#34;http://localhost:1313/img/avatar.jpg&#34; alt=&#34;Nguyễn Thành Tài&#34; class=&#34;about-avatar-image&#34;&gt;&#xD;&#xA;                &lt;/div&gt;&#xD;&#xA;            &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h1 class=&#34;about-greeting&#34;&gt;Nguyễn Thành Tài&lt;/h1&gt;&#xD;&#xA;            &lt;p class=&#34;about-role&#34;&gt;Sinh viên công nghệ phần mềm tại HUTECH&lt;/p&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2 class=&#34;about-content-heading&#34;&gt;Giới Thiệu Bản Thân&lt;/h2&gt;&#xD;&#xA;            &lt;p class=&#34;about-bio-content&#34;&gt;&#xD;&#xA;                Mình là sinh viên năm cuối chuyên ngành công nghệ phần mềm tại trường Đại học HUTECH&#xD;&#xA;                (Đại học Công nghệ TP.HCM). Với nền tảng vững chắc về khoa học máy tính&#xD;&#xA;                và đam mê xây dựng hệ thống, mình mong muốn áp dụng kiến thức của bản thân để giải quyết các vấn đề thực tế.&#xD;&#xA;            &lt;/p&gt;</description>
+      <description>&lt;div class=&#34;about-page&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;container&#34;&gt;&#xD;&#xA;        &lt;div class=&#34;about-card-unified&#34;&gt;&#xD;&#xA;            &lt;div class=&#34;about-avatar-section&#34;&gt;&#xD;&#xA;                &lt;div class=&#34;about-avatar-wrapper&#34;&gt;&#xD;&#xA;                    &lt;img src=&#34;http://localhost:1313/img/avatar.jpg&#34; alt=&#34;Nguyễn Thành Tài&#34; class=&#34;about-avatar-image&#34;&gt;&#xD;&#xA;                &lt;/div&gt;&#xD;&#xA;            &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h1 class=&#34;about-greeting&#34;&gt;Nguyễn Thành Tài&lt;/h1&gt;&#xD;&#xA;            &lt;p class=&#34;about-role&#34;&gt;Sinh viên công nghệ phần mềm tại HUTECH&lt;/p&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2 class=&#34;about-content-heading&#34;&gt;Giới Thiệu Bản Thân&lt;/h2&gt;&#xD;&#xA;            &lt;p class=&#34;about-bio-content&#34;&gt;&#xD;&#xA;                Mình là sinh viên năm cuối chuyên ngành công nghệ phần mềm tại trường Đại học HUTECH&#xD;&#xA;                (Đại học Công nghệ TP.HCM). Với nền tảng vững chắc về khoa học máy tính&#xD;&#xA;                và đam mê xây dựng hệ thống, mình mong muốn áp dụng kiến thức của bản thân để giải quyết các vấn đề thực&#xD;&#xA;                tế.&#xD;&#xA;            &lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
